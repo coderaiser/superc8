@@ -4,11 +4,11 @@
 ![nycrc config on GitHub](https://img.shields.io/nycrc/bcoe/c8)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://www.conventionalcommits.org/)
 
-For of `c8` contains:
+## Fork of `c8` contains
 
-- ✅Fixed TODO (https://github.com/bcoe/c8/blob/main/lib/parse-args.js#L176, https://github.com/bcoe/c8/blob/ee2f1cfc5584d41bb2d51b788d0953dab0c798f8/lib/commands/check-coverage.js#L14);
-- ✅Migrated to ESM;
-- ✅Updated all dependencies, including `yargs` that makes `node v25` crash (https://github.com/bcoe/c8/issues/582);
+- ✅ Fixed TODO ([`parase-args#L176`](https://github.com/bcoe/c8/blob/main/lib/parse-args.js#L176), [`check-coverage#L14`](https://github.com/bcoe/c8/blob/ee2f1cfc5584d41bb2d51b788d0953dab0c798f8/lib/commands/check-coverage.js#L14));
+- ✅ Migrated to ESM;
+- ✅ Updated all dependencies, including `yargs` that makes `node v25` crash (https://github.com/bcoe/c8/issues/582);
 
 Code-coverage using [Node.js' built in functionality](https://nodejs.org/dist/latest-v10.x/docs/api/cli.html#cli_node_v8_coverage_dir)
 that's compatible with [Istanbul's reporters](https://istanbul.js.org/docs/advanced/alternative-reporters/).
