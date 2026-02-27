@@ -5,7 +5,10 @@
   "description": "Output coverage reports using Node.js' built in coverage",
   "main": "./index.js",
   "types": "./index.d.ts",
-  "bin": "./bin/c8.js",
+  "bin": {
+    "c8": "./bin/c8.js",
+    "superc8": "./bin/c8.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/coderaiser/superc8"
