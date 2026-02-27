@@ -1,8 +1,8 @@
 {
-  "name": "c8",
-  "version": "11.0.0",
+  "name": "superc8",
+  "version": "1.0.0",
   "type": "module",
-  "description": "output coverage reports using Node.js' built in coverage",
+  "description": "Output coverage reports using Node.js' built in coverage",
   "main": "./index.js",
   "types": "./index.d.ts",
   "bin": "./bin/c8.js",
