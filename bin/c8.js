@@ -3,8 +3,9 @@
 'use strict';
 
 const {foregroundChild} = require('foreground-child');
-const {outputReport} = require('../lib/commands/report');
+
 const {rm, mkdir} = require('fs/promises');
+const {outputReport} = require('../lib/commands/report');
 
 const {
     buildYargs,

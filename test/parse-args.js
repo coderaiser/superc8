@@ -1,11 +1,10 @@
 /* global describe, it */
+const {join, resolve} = require('path');
 const {
     buildYargs,
     hideInstrumenteeArgs,
     hideInstrumenterArgs,
 } = require('../lib/parse-args');
-
-const {join, resolve} = require('path');
 
 describe('parse-args', () => {
     describe('hideInstrumenteeArgs', () => {

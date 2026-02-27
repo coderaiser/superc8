@@ -1,7 +1,7 @@
 /* global describe, it */
-const getSourceMapFromFile = require('../lib/source-map-from-file');
 const assert = require('assert');
 const {readFileSync} = require('fs');
+const getSourceMapFromFile = require('../lib/source-map-from-file');
 
 describe('source-map-from-file', () => {
     it('should parse source maps from compiled targets', () => {

@@ -6,7 +6,6 @@
         "nodejs/add-missing-strict-mode": "off",
         "nodejs/declare": "off",
         "nodejs/add-node-prefix": "off",
-        "nodejs/group-require-by-id": "off",
         "conditions/apply-consistent-blocks": "off",
         "variables/remove-unused": "off",
         "apply-shorthand-properties": "off",
