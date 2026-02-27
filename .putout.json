@@ -45,5 +45,8 @@
         "conditions/apply-equal": "off",
         "conditions/remove-zero": "off",
         "apply-dot-notation": "off"
-    }
+    },
+    "ignore": [
+        "tmp"
+    ]
 }

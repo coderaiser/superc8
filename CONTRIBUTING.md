@@ -13,51 +13,56 @@ Pull Requests are the way concrete changes are made to the code, documentation, 
 ### Setting up your local environment
 
 1. Make sure you have installed the latest version of Node.js
-1. Fork this project on GitHub and clone your fork locally:
 
-    ```sh
-    git clone git@github.com:username/c8.git
-    cd c8
-    git remote add upstream https://github.com/bcoe/c8.git
-    git fetch upstream
-    ```
+2. Fork this project on GitHub and clone your fork locally:
 
-1. Create local branches to work within. These should also be created directly off of the main branch:
+   ```sh
+   git clone git@github.com:username/c8.git
+   cd c8
+   git remote add upstream https://github.com/bcoe/c8.git
+   git fetch upstream
+   ```
 
-    ```sh
-    git checkout -b my-branch -t upstream/main
-    ```
+3. Create local branches to work within. These should also be created directly off of the main branch:
 
-1. Make your changes
-1. Run tests to make sure all is okay (everything should pass except snapshot):
+   ```sh
+   git checkout -b my-branch -t upstream/main
+   ```
+
+4. Make your changes
+
+5. Run tests to make sure all is okay (everything should pass except snapshot):
+
+   ```sh
+   npm test
+   ```
+
+6. Now update the snapshot
+
+   ```sh
+   npm run test:snap
+   ```
+
+7. If all is passing, commit your changes.
+
+8. As a best practice, once you have committed your changes, it is a good idea to use git rebase (not git merge) to synchronize your work with the main repository:
+
+   ```sh
+   git fetch upstream
+   git rebase upstream/main
+   ```
+
+9. Run tests again to make sure all is okay
+
+10. Push:
 
     ```sh
     npm test
     ```
 
-1. Now update the snapshot
+11. Open the pull request, see details in the template.
 
-    ```sh
-    npm run test:snap
-    ```
-
-1. If all is passing, commit your changes.
-1. As a best practice, once you have committed your changes, it is a good idea to use git rebase (not git merge) to synchronize your work with the main repository:
-
-    ```sh
-    git fetch upstream
-    git rebase upstream/main
-    ```
-
-1. Run tests again to make sure all is okay
-1. Push:
-
-    ```sh
-    npm test
-    ```
-
-1. Open the pull request, see details in the template.
-1. Make any necessary changes after review.
+12. Make any necessary changes after review.
 
 ## Note
 
