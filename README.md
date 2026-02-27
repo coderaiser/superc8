@@ -193,3 +193,7 @@ make sure you're running Node.js `>= 12`.
 ## Contributing to `c8`
 
 See the [contributing guide here](./CONTRIBUTING.md).
+
+## License
+
+MIT

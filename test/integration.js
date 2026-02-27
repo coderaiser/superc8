@@ -1,9 +1,12 @@
 /* global describe, before, beforeEach, it */
-const {readFileSync} = require('fs');
-const {resolve} = require('path');
+const {
+    readFileSync,
+    statSync,
+    rm,
+} = require('fs');
+const {resolve, dirname} = require('path');
 const {spawnSync} = require('child_process');
-const {statSync, rm} = require('fs');
-const {dirname} = require('path');
+
 const c8Path = require.resolve('../bin/c8');
 const nodePath = process.execPath;
 const tsNodePath = './node_modules/.bin/ts-node';
@@ -601,7 +604,7 @@ for (const mergeAsync of [false, true]) {
             });
             
             // See: https://github.com/bcoe/c8/issues/232
-            it('does not attempt to load source map URLs that aren\'t', () => {
+            it(`does not attempt to load source map URLs that aren't`, () => {
                 const {output} = spawnSync(nodePath, [
                     c8Path,
                     '--exclude="test/*.js"',
@@ -752,7 +755,7 @@ for (const mergeAsync of [false, true]) {
                 require.resolve('./fixtures/computed-method'),
             ]);
             const cobertura = readFileSync(resolve(process.cwd(), './coverage/cobertura-coverage.xml'), 'utf8')
-                .replace(/[0-9]{13,}/, 'nnnn')
+                .replace(/\d{13,}/, 'nnnn')
                 .replace(/<source>.*<\/source>/, '<source>/foo/file</source>')
                 .replace(/\\/g, '/');
             
@@ -873,7 +876,7 @@ for (const mergeAsync of [false, true]) {
         });
         
         describe('monocart report', () => {
-            it('check import monocart', async () => {
+            it('check import monocart', () => {
                 const {output, status} = spawnSync(nodePath, ['./test/fixtures/import-mcr.js']);
                 status.should.equal(1);
                 output
