@@ -1,12 +1,15 @@
 /* global describe, it */
-const assert = require('node:assert');
-const {readFileSync} = require('node:fs');
-const getSourceMapFromFile = require('../lib/source-map-from-file');
+import assert from 'node:assert';
+import {readFileSync} from 'node:fs';
+import {fileURLToPath} from 'node:url';
+import getSourceMapFromFile from '../lib/source-map-from-file.js';
+
+const resolveConfig = (a) => fileURLToPath(import.meta.resolve(a));
 
 describe('source-map-from-file', () => {
     it('should parse source maps from compiled targets', () => {
         const sourceMap = getSourceMapFromFile('./test/fixtures/all/ts-compiled/main.js');
-        const expected = JSON.parse(readFileSync(require.resolve('./fixtures/all/ts-compiled/main.js.map'), 'utf8'));
+        const expected = JSON.parse(readFileSync(resolveConfig('./fixtures/all/ts-compiled/main.js.map'), 'utf8'));
         
         assert.deepStrictEqual(sourceMap, expected);
     });

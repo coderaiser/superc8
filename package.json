@@ -1,7 +1,7 @@
 {
   "name": "c8",
   "version": "11.0.0",
-  "type": "commonjs",
+  "type": "module",
   "description": "output coverage reports using Node.js' built in coverage",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -63,7 +63,7 @@
     }
   },
   "engines": {
-    "node": "20 || >=22"
+    "node": ">=22"
   },
   "files": [
     "index.js",

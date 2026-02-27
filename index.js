@@ -1,1 +1,1 @@
-module.exports.Report = require('./lib/report');
+export * as Report from './lib/report.js';

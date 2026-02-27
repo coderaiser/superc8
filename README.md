@@ -1,4 +1,4 @@
-# c8 - native V8 code-coverage
+# superc8 - native V8 code-coverage
 
 [![ci](https://github.com/bcoe/c8/actions/workflows/ci.yaml/badge.svg)](https://github.com/bcoe/c8/actions/workflows/ci.yaml)
 ![nycrc config on GitHub](https://img.shields.io/nycrc/bcoe/c8)

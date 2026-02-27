@@ -23,7 +23,7 @@ export declare class Report {
         wrapperLength?: number;
         resolve?: string;
         all?: boolean;
-        src?: Array<string>;
+        src?: string[];
         allowExternal?: boolean;
         skipFull?: boolean;
         excludeNodeModules?: boolean;

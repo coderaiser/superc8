@@ -1,17 +1,13 @@
 #!/usr/bin/env node
 
-'use strict';
-
-const {rm, mkdir} = require('node:fs/promises');
-const {foregroundChild} = require('foreground-child');
-
-const {outputReport} = require('../lib/commands/report');
-
-const {
+import {rm, mkdir} from 'node:fs/promises';
+import {foregroundChild} from 'foreground-child';
+import {outputReport} from '../lib/commands/report.js';
+import {
     buildYargs,
     hideInstrumenteeArgs,
     hideInstrumenterArgs,
-} = require('../lib/parse-args');
+} from '../lib/parse-args.js';
 
 const instrumenterArgs = hideInstrumenteeArgs();
 let argv = buildYargs().parse(instrumenterArgs);

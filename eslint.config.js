@@ -1,3 +1,3 @@
-const {safeAlign} = require('eslint-plugin-putout');
+import {safeAlign} from 'eslint-plugin-putout';
 
-module.exports = safeAlign;
+export default safeAlign;

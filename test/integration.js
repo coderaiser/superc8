@@ -1,19 +1,21 @@
 /* global describe, before, beforeEach, it */
-const {
+import {
     readFileSync,
     statSync,
     rm,
-} = require('node:fs');
+} from 'node:fs';
+import {resolve, dirname} from 'node:path';
+import {spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+import chaiJestSnapshot from 'chai-jest-snapshot';
+import * as chai from 'chai';
 
-const {resolve, dirname} = require('node:path');
-const {spawnSync} = require('node:child_process');
-
-const c8Path = require.resolve('../bin/c8');
+const resolveToFilePath = (a) => fileURLToPath(import.meta.resolve(a));
+const c8Path = resolveToFilePath('../bin/c8.js');
 const nodePath = process.execPath;
 const tsNodePath = './node_modules/.bin/ts-node';
-const chaiJestSnapshot = require('chai-jest-snapshot');
 
-require('chai')
+chai
     .use(chaiJestSnapshot)
     .should();
 
@@ -34,7 +36,7 @@ for (const mergeAsync of [false, true]) {
                 '--clean=false',
                 `--merge-async=${mergeAsync}`,
                 nodePath,
-                require.resolve('./fixtures/normal'),
+                resolveToFilePath('./fixtures/normal'),
             ]);
             
             output
@@ -50,7 +52,7 @@ for (const mergeAsync of [false, true]) {
                 '--clean=true',
                 `--merge-async=${mergeAsync}`,
                 nodePath,
-                require.resolve('./fixtures/normal'),
+                resolveToFilePath('./fixtures/normal'),
             ], {
                 env: {
                     NODE_V8_COVERAGE: 'tmp/override',
@@ -77,7 +79,7 @@ for (const mergeAsync of [false, true]) {
                 '--clean=false',
                 `--merge-async=${mergeAsync}`,
                 nodePath,
-                require.resolve('./fixtures/multiple-spawn'),
+                resolveToFilePath('./fixtures/multiple-spawn'),
             ]);
             
             output
@@ -95,7 +97,7 @@ for (const mergeAsync of [false, true]) {
                 '--clean=false',
                 `--merge-async=${mergeAsync}`,
                 nodePath,
-                require.resolve('./fixtures/multiple-spawn'),
+                resolveToFilePath('./fixtures/multiple-spawn'),
             ], {
                 env: {
                     NODE_DEBUG: 'c8',
@@ -139,9 +141,9 @@ for (const mergeAsync of [false, true]) {
                 '--reporter=text',
                 `--merge-async=${mergeAsync}`,
                 nodePath,
-                require.resolve('./fixtures/report/allowExternal.js'),
+                resolveToFilePath('./fixtures/report/allowExternal.js'),
             ], {
-                cwd: dirname(require.resolve('./fixtures/report/allowExternal.js')),
+                cwd: dirname(resolveToFilePath('./fixtures/report/allowExternal.js')),
             });
             
             status.should.equal(0);
@@ -165,14 +167,14 @@ for (const mergeAsync of [false, true]) {
                 '--allowExternal',
                 '--reporter=text',
                 '--all',
-                `--src=${dirname(require.resolve('./fixtures/multidir1/file1.js'))}`,
-                `--src=${dirname(require.resolve('./fixtures/multidir2/file2.js'))}`,
-                `--src=${dirname(require.resolve('./fixtures/report/srcOverride.js'))}`,
+                `--src=${dirname(resolveToFilePath('./fixtures/multidir1/file1.js'))}`,
+                `--src=${dirname(resolveToFilePath('./fixtures/multidir2/file2.js'))}`,
+                `--src=${dirname(resolveToFilePath('./fixtures/report/srcOverride.js'))}`,
                 `--merge-async=${mergeAsync}`,
                 nodePath,
-                require.resolve('./fixtures/report/srcOverride.js'),
+                resolveToFilePath('./fixtures/report/srcOverride.js'),
             ], {
-                cwd: dirname(require.resolve('./fixtures/report/srcOverride.js')),
+                cwd: dirname(resolveToFilePath('./fixtures/report/srcOverride.js')),
             });
             
             status.should.equal(0);
@@ -191,7 +193,7 @@ for (const mergeAsync of [false, true]) {
                     '--clean=false',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/normal'),
+                    resolveToFilePath('./fixtures/normal'),
                 ]);
             });
             
@@ -259,7 +261,7 @@ for (const mergeAsync of [false, true]) {
                     '--check-coverage',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/normal'),
+                    resolveToFilePath('./fixtures/normal'),
                 ]);
                 
                 status.should.equal(1);
@@ -277,7 +279,7 @@ for (const mergeAsync of [false, true]) {
                     '--100',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/normal'),
+                    resolveToFilePath('./fixtures/normal'),
                 ]);
                 
                 status.should.equal(1);
@@ -314,7 +316,7 @@ for (const mergeAsync of [false, true]) {
                     '--clean=false',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/normal'),
+                    resolveToFilePath('./fixtures/normal'),
                 ]);
             });
             
@@ -365,7 +367,7 @@ for (const mergeAsync of [false, true]) {
                     nodePath,
                     '--experimental-modules',
                     '--no-warnings',
-                    require.resolve('./fixtures/import.mjs'),
+                    resolveToFilePath('./fixtures/import.mjs'),
                 ]);
                 
                 output
@@ -384,7 +386,7 @@ for (const mergeAsync of [false, true]) {
                     '--temp-directory=tmp/special-comment',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/c8-ignore-next.js'),
+                    resolveToFilePath('./fixtures/c8-ignore-next.js'),
                 ]);
                 
                 output
@@ -403,7 +405,7 @@ for (const mergeAsync of [false, true]) {
                     '--reporter=text',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/issue-254'),
+                    resolveToFilePath('./fixtures/issue-254'),
                 ]);
                 
                 output
@@ -422,7 +424,7 @@ for (const mergeAsync of [false, true]) {
                     '--temp-directory=tmp/start-stop',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/c8-ignore-start-stop.js'),
+                    resolveToFilePath('./fixtures/c8-ignore-start-stop.js'),
                 ]);
                 
                 output
@@ -446,7 +448,7 @@ for (const mergeAsync of [false, true]) {
                         '--clean=true',
                         `--merge-async=${mergeAsync}`,
                         nodePath,
-                        require.resolve('./fixtures/source-maps/branches/branches.typescript.js'),
+                        resolveToFilePath('./fixtures/source-maps/branches/branches.typescript.js'),
                     ]);
                     
                     output
@@ -465,7 +467,7 @@ for (const mergeAsync of [false, true]) {
                         '--clean=true',
                         `--merge-async=${mergeAsync}`,
                         nodePath,
-                        require.resolve('./fixtures/source-maps/classes/classes.typescript.js'),
+                        resolveToFilePath('./fixtures/source-maps/classes/classes.typescript.js'),
                     ]);
                     
                     output
@@ -486,7 +488,7 @@ for (const mergeAsync of [false, true]) {
                         '--clean=true',
                         `--merge-async=${mergeAsync}`,
                         nodePath,
-                        require.resolve('./fixtures/source-maps/branches/branches.uglify.js'),
+                        resolveToFilePath('./fixtures/source-maps/branches/branches.uglify.js'),
                     ]);
                     
                     output
@@ -505,7 +507,7 @@ for (const mergeAsync of [false, true]) {
                         '--clean=true',
                         `--merge-async=${mergeAsync}`,
                         nodePath,
-                        require.resolve('./fixtures/source-maps/classes/classes.uglify.js'),
+                        resolveToFilePath('./fixtures/source-maps/classes/classes.uglify.js'),
                     ]);
                     
                     output
@@ -524,7 +526,7 @@ for (const mergeAsync of [false, true]) {
                         '--clean=true',
                         `--merge-async=${mergeAsync}`,
                         nodePath,
-                        require.resolve('./fixtures/source-maps/branches/branches.nyc.js'),
+                        resolveToFilePath('./fixtures/source-maps/branches/branches.nyc.js'),
                     ]);
                     
                     output
@@ -541,7 +543,7 @@ for (const mergeAsync of [false, true]) {
                         '--clean=true',
                         `--merge-async=${mergeAsync}`,
                         nodePath,
-                        require.resolve('./fixtures/source-maps/classes/classes.nyc.js'),
+                        resolveToFilePath('./fixtures/source-maps/classes/classes.nyc.js'),
                     ]);
                     
                     output
@@ -559,7 +561,7 @@ for (const mergeAsync of [false, true]) {
                         '--clean=true',
                         `--merge-async=${mergeAsync}`,
                         nodePath,
-                        require.resolve('./fixtures/source-maps/branches/branches.rollup.js'),
+                        resolveToFilePath('./fixtures/source-maps/branches/branches.rollup.js'),
                     ]);
                     
                     output
@@ -576,7 +578,7 @@ for (const mergeAsync of [false, true]) {
                         '--clean=true',
                         `--merge-async=${mergeAsync}`,
                         nodePath,
-                        require.resolve('./fixtures/source-maps/classes/classes.rollup.js'),
+                        resolveToFilePath('./fixtures/source-maps/classes/classes.rollup.js'),
                     ]);
                     
                     output
@@ -594,7 +596,7 @@ for (const mergeAsync of [false, true]) {
                         '--clean=true',
                         `--merge-async=${mergeAsync}`,
                         tsNodePath,
-                        require.resolve('./fixtures/ts-node-basic.ts'),
+                        resolveToFilePath('./fixtures/ts-node-basic.ts'),
                     ]);
                     
                     output
@@ -613,7 +615,7 @@ for (const mergeAsync of [false, true]) {
                     '--clean=true',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/source-maps/fake-source-map.js'),
+                    resolveToFilePath('./fixtures/source-maps/fake-source-map.js'),
                 ]);
                 
                 output
@@ -634,7 +636,7 @@ for (const mergeAsync of [false, true]) {
                     // add an exclude to avoid default excludes of test/**
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/all/vanilla/main'),
+                    resolveToFilePath('./fixtures/all/vanilla/main'),
                 ]);
                 
                 output
@@ -654,7 +656,7 @@ for (const mergeAsync of [false, true]) {
                     // add an exclude to avoid default excludes of test/**
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/all/ts-compiled/main.js'),
+                    resolveToFilePath('./fixtures/all/ts-compiled/main.js'),
                 ]);
                 
                 output
@@ -674,7 +676,7 @@ for (const mergeAsync of [false, true]) {
                     // add an exclude to avoid default excludes of test/**
                     `--merge-async=${mergeAsync}`,
                     tsNodePath,
-                    require.resolve('./fixtures/all/ts-only/main.ts'),
+                    resolveToFilePath('./fixtures/all/ts-only/main.ts'),
                 ]);
                 
                 output
@@ -696,7 +698,7 @@ for (const mergeAsync of [false, true]) {
                     // add an exclude to avoid default excludes of test/**
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/all/vanilla/main'),
+                    resolveToFilePath('./fixtures/all/vanilla/main'),
                 ]);
                 
                 output
@@ -719,7 +721,7 @@ for (const mergeAsync of [false, true]) {
                     // add an exclude to avoid default excludes of test/**
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/all/vanilla/main'),
+                    resolveToFilePath('./fixtures/all/vanilla/main'),
                 ]);
                 
                 // invoke check-coverage as a command with --all
@@ -753,7 +755,7 @@ for (const mergeAsync of [false, true]) {
                 '--reporter=cobertura',
                 `--merge-async=${mergeAsync}`,
                 nodePath,
-                require.resolve('./fixtures/computed-method'),
+                resolveToFilePath('./fixtures/computed-method'),
             ]);
             const cobertura = readFileSync(resolve(process.cwd(), './coverage/cobertura-coverage.xml'), 'utf8')
                 .replace(/\d{13,}/, 'nnnn')
@@ -770,9 +772,9 @@ for (const mergeAsync of [false, true]) {
                 // invoke a script that uses report as an api and supplies src dirs out
                 // of cwd
                 const {output} = spawnSync(nodePath, [
-                    require.resolve('./fixtures/report/report-multi-dir-external.js'),
+                    resolveToFilePath('./fixtures/report/report-multi-dir-external.js'),
                 ], {
-                    cwd: dirname(require.resolve('./fixtures/report/report-multi-dir-external.js')),
+                    cwd: dirname(resolveToFilePath('./fixtures/report/report-multi-dir-external.js')),
                 });
                 
                 output
@@ -785,9 +787,9 @@ for (const mergeAsync of [false, true]) {
                 // invoke a script that uses report as an api and supplies src dirs out
                 // of cwd.
                 const {output} = spawnSync(nodePath, [
-                    require.resolve('./fixtures/report/report-single-dir-external.js'),
+                    resolveToFilePath('./fixtures/report/report-single-dir-external.js'),
                 ], {
-                    cwd: dirname(require.resolve('./fixtures/report/report-single-dir-external.js')),
+                    cwd: dirname(resolveToFilePath('./fixtures/report/report-single-dir-external.js')),
                 });
                 
                 output
@@ -804,7 +806,7 @@ for (const mergeAsync of [false, true]) {
                 '--temp-directory=tmp/shebang',
                 '--clean=false',
                 `--merge-async=${mergeAsync}`,
-                require.resolve('./fixtures/shebang'),
+                resolveToFilePath('./fixtures/shebang'),
             ]);
             
             output
@@ -824,7 +826,7 @@ for (const mergeAsync of [false, true]) {
                     '--clean=true',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/source-maps/branches/branches.rollup.js'),
+                    resolveToFilePath('./fixtures/source-maps/branches/branches.rollup.js'),
                 ]);
                 
                 output
@@ -845,7 +847,7 @@ for (const mergeAsync of [false, true]) {
                     '--clean=true',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/custom-ext.special'),
+                    resolveToFilePath('./fixtures/custom-ext.special'),
                 ]);
                 
                 output
@@ -866,7 +868,7 @@ for (const mergeAsync of [false, true]) {
                     '--clean=true',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/custom-ext.special'),
+                    resolveToFilePath('./fixtures/custom-ext.special'),
                 ]);
                 
                 output
@@ -898,7 +900,7 @@ for (const mergeAsync of [false, true]) {
                     '--clean=false',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/normal'),
+                    resolveToFilePath('./fixtures/normal'),
                 ]);
                 
                 output
@@ -921,7 +923,7 @@ for (const mergeAsync of [false, true]) {
                     '--clean=false',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/all/vanilla/main'),
+                    resolveToFilePath('./fixtures/all/vanilla/main'),
                 ]);
                 
                 output
@@ -946,7 +948,7 @@ for (const mergeAsync of [false, true]) {
                     '--clean=false',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/normal'),
+                    resolveToFilePath('./fixtures/normal'),
                 ]);
                 
                 status.should.equal(1);
@@ -973,7 +975,7 @@ for (const mergeAsync of [false, true]) {
                     '--clean=false',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/normal'),
+                    resolveToFilePath('./fixtures/normal'),
                 ]);
                 
                 status.should.equal(1);
@@ -999,7 +1001,7 @@ for (const mergeAsync of [false, true]) {
                     '--clean=false',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/all/vanilla/main'),
+                    resolveToFilePath('./fixtures/all/vanilla/main'),
                 ]);
                 
                 status.should.equal(1);
@@ -1022,7 +1024,7 @@ for (const mergeAsync of [false, true]) {
                     '--clean=false',
                     `--merge-async=${mergeAsync}`,
                     nodePath,
-                    require.resolve('./fixtures/source-maps/branches/branches.typescript.js'),
+                    resolveToFilePath('./fixtures/source-maps/branches/branches.typescript.js'),
                 ]);
                 
                 output

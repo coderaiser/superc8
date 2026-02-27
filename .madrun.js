@@ -1,12 +1,10 @@
-'use strict';
-
-const {
+import {
     run,
     series,
     parallel,
-} = require('madrun');
+} from 'madrun';
 
-module.exports = {
+export default {
     'lint': () => 'putout .',
     'fix:lint': () => run('lint', '--fix'),
     'test': () => 'cross-env TS_NODE_SKIP_PROJECT=true node ./bin/c8.js mocha --timeout=10000 ./test/*.js',

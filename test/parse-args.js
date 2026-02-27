@@ -1,10 +1,13 @@
 /* global describe, it */
-const {join, resolve} = require('node:path');
-const {
+import {join, resolve} from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {
     buildYargs,
     hideInstrumenteeArgs,
     hideInstrumenterArgs,
-} = require('../lib/parse-args');
+} from '../lib/parse-args.js';
+
+const resolveConfig = (a) => fileURLToPath(import.meta.resolve(a));
 
 describe('parse-args', () => {
     describe('hideInstrumenteeArgs', () => {
@@ -76,7 +79,7 @@ describe('parse-args', () => {
                 'node',
                 'c8',
                 '--config',
-                require.resolve('./fixtures/config/.c8rc.json'),
+                fileURLToPath(import.meta.resolve('./fixtures/config/.c8rc.json')),
             ]);
             
             argv.lines.should.be.equal(101);
@@ -87,7 +90,7 @@ describe('parse-args', () => {
                 'node',
                 'c8',
                 '-c',
-                require.resolve('./fixtures/config/.c8rc.json'),
+                resolveConfig('./fixtures/config/.c8rc.json'),
             ]);
             
             argv.lines.should.be.equal(101);
@@ -100,7 +103,7 @@ describe('parse-args', () => {
                 '--lines',
                 '100',
                 '--config',
-                require.resolve('./fixtures/config/.c8rc.json'),
+                resolveConfig('./fixtures/config/.c8rc.json'),
             ]);
             
             argv.lines.should.be.equal(100);
@@ -112,7 +115,7 @@ describe('parse-args', () => {
                 '--lines',
                 '100',
                 '--config',
-                require.resolve('./fixtures/config/.c8rc-base.json'),
+                resolveConfig('./fixtures/config/.c8rc-base.json'),
             ]);
             
             argv.branches.should.be.equal(55);
