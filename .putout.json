@@ -13,7 +13,6 @@
         "nodejs/declare-after-require": "off",
         "conditions/evaluate": "off",
         "remove-unused-expressions": "off",
-        "remove-unreachable-code": "off",
         "simplify-ternary/value": "off",
         "variables/remove-useless": "off",
         "conditions/apply-equal": "off"
