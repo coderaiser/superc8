@@ -159,7 +159,7 @@ All files                              |    3.08 |    11.76 |    6.12 |    3.08 
   eslint.config.js                     |       0 |        0 |       0 |       0 | 1-3                    
   index.js                             |       0 |        0 |       0 |       0 | 1                      
  c8/bin                                |       0 |        0 |       0 |       0 |                        
-  c8.js                                |       0 |        0 |       0 |       0 | 1-47                   
+  c8.js                                |       0 |        0 |       0 |       0 | 1-50                   
  c8/coverage                           |       0 |        0 |       0 |       0 |                        
   block-navigation.js                  |       0 |        0 |       0 |       0 | 1-87                   
   prettify.js                          |       0 |        0 |       0 |       0 | 1-2                    
@@ -365,7 +365,7 @@ Error: foreground-child watchdog process died unexpectedly!
     at maybeClose (node:internal/child_process:1100:16)
     at ChildProcess._handle.onexit (node:internal/child_process:305:5) {
   [cause]: {
-    pid: 25064,
+    pid: 27166,
     code: 0,
     signal: null,
     watchedProcess: {
@@ -539,7 +539,7 @@ All files                              |    3.08 |    11.76 |    6.12 |    3.08 
   eslint.config.js                     |       0 |        0 |       0 |       0 | 1-3                    
   index.js                             |       0 |        0 |       0 |       0 | 1                      
  c8/bin                                |       0 |        0 |       0 |       0 |                        
-  c8.js                                |       0 |        0 |       0 |       0 | 1-47                   
+  c8.js                                |       0 |        0 |       0 |       0 | 1-50                   
  c8/coverage                           |       0 |        0 |       0 |       0 |                        
   block-navigation.js                  |       0 |        0 |       0 |       0 | 1-87                   
   prettify.js                          |       0 |        0 |       0 |       0 | 1-2                    

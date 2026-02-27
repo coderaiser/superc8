@@ -2,6 +2,7 @@
 
 import {rm, mkdir} from 'node:fs/promises';
 import {foregroundChild} from 'foreground-child';
+import {tryToCatch} from 'try-to-catch';
 import {outputReport} from '../lib/commands/report.js';
 import {
     buildYargs,
@@ -11,6 +12,13 @@ import {
 
 const instrumenterArgs = hideInstrumenteeArgs();
 let argv = buildYargs().parse(instrumenterArgs);
+
+const [error] = await tryToCatch(run);
+
+if (error) {
+    console.error(error.stack);
+    process.exitCode = 1;
+}
 
 async function run() {
     if ([
@@ -24,7 +32,7 @@ async function run() {
                 recursive: true,
                 force: true,
             });
-        
+
         await mkdir(argv.tempDirectory, {
             recursive: true,
         });
@@ -40,8 +48,3 @@ async function run() {
         });
     }
 }
-
-run().catch((err) => {
-    console.error(err.stack);
-    process.exitCode = 1;
-});
