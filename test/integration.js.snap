@@ -79,7 +79,7 @@ All files     |       0 |        0 |       0 |       0 |
  ts-only/dir  |       0 |        0 |       0 |       0 |                   
   unloaded.ts |       0 |        0 |       0 |       0 | 1-5               
 --------------|---------|----------|---------|---------|-------------------
-,(node:13165) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/coderaiser/c8/test/fixtures/all/ts-only/main.ts is not specified and it doesn't parse as CommonJS.
+,(node:16009) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/coderaiser/c8/test/fixtures/all/ts-only/main.ts is not specified and it doesn't parse as CommonJS.
 Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
 To eliminate this warning, add \\"type\\": \\"module\\" to /Users/coderaiser/c8/package.json.
 (Use \`node --trace-warnings ...\` to show where the warning was created)
@@ -171,23 +171,24 @@ hey
 ---------------------------------------|---------|----------|---------|---------|------------------------
 File                                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s      
 ---------------------------------------|---------|----------|---------|---------|------------------------
-All files                              |    3.15 |       12 |    6.25 |    3.15 |                        
+All files                              |    3.02 |    11.76 |    6.12 |    3.02 |                        
  c8                                    |       0 |        0 |       0 |       0 |                        
-  .madrun.js                           |       0 |        0 |       0 |       0 | 1-15                   
+  .madrun.js                           |       0 |        0 |       0 |       0 | 1-16                   
+  eslint.config.js                     |       0 |        0 |       0 |       0 | 1-3                    
   index.js                             |       0 |        0 |       0 |       0 | 1                      
  c8/bin                                |       0 |        0 |       0 |       0 |                        
-  c8.js                                |       0 |        0 |       0 |       0 | 1-43                   
+  c8.js                                |       0 |        0 |       0 |       0 | 1-51                   
  c8/coverage                           |       0 |        0 |       0 |       0 |                        
   block-navigation.js                  |       0 |        0 |       0 |       0 | 1-87                   
   prettify.js                          |       0 |        0 |       0 |       0 | 1-2                    
   sorter.js                            |       0 |        0 |       0 |       0 | 1-210                  
  c8/lib                                |       0 |        0 |       0 |       0 |                        
-  parse-args.js                        |       0 |        0 |       0 |       0 | 1-229                  
-  report.js                            |       0 |        0 |       0 |       0 | 1-542                  
-  source-map-from-file.js              |       0 |        0 |       0 |       0 | 1-100                  
+  parse-args.js                        |       0 |        0 |       0 |       0 | 1-234                  
+  report.js                            |       0 |        0 |       0 |       0 | 1-579                  
+  source-map-from-file.js              |       0 |        0 |       0 |       0 | 1-108                  
  c8/lib/commands                       |       0 |        0 |       0 |       0 |                        
-  check-coverage.js                    |       0 |        0 |       0 |       0 | 1-70                   
-  report.js                            |       0 |        0 |       0 |       0 | 1-44                   
+  check-coverage.js                    |       0 |        0 |       0 |       0 | 1-82                   
+  report.js                            |       0 |        0 |       0 |       0 | 1-48                   
  c8/test/fixtures                      |   29.08 |    35.29 |      20 |   29.08 |                        
   async.js                             |     100 |      100 |     100 |     100 |                        
   c8-ignore-next.js                    |   54.54 |        0 |       0 |   54.54 | 1,3-4,9,12,17-19,21-22 
@@ -398,8 +399,8 @@ covered
 -------------------|---------|----------|---------|---------|-------------------
 File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -------------------|---------|----------|---------|---------|-------------------
-All files          |   81.81 |      100 |     100 |   81.81 |                   
- c8-ignore-next.js |   81.81 |      100 |     100 |   81.81 | 17-18,21-22       
+All files          |    90.9 |      100 |     100 |    90.9 |                   
+ c8-ignore-next.js |    90.9 |      100 |     100 |    90.9 | 21-22             
 -------------------|---------|----------|---------|---------|-------------------
 ,"
 `;
@@ -423,9 +424,9 @@ negative
 --------------|---------|----------|---------|---------|-------------------
 File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------|---------|----------|---------|---------|-------------------
-All files     |   64.28 |       75 |   66.66 |   64.28 |                   
- vanilla      |   78.26 |       80 |     100 |   78.26 |                   
-  loaded.js   |   73.68 |    76.92 |     100 |   73.68 | 4-5,16-18         
+All files     |   64.28 |    66.66 |      50 |   64.28 |                   
+ vanilla      |   78.26 |       75 |     100 |   78.26 |                   
+  loaded.js   |   73.68 |    71.42 |     100 |   73.68 | 4-5,16-18         
   main.js     |     100 |      100 |     100 |     100 |                   
  vanilla/dir  |       0 |        0 |       0 |       0 |                   
   unloaded.js |       0 |        0 |       0 |       0 | 1-5               
@@ -440,9 +441,9 @@ negative
 -----------------|---------|----------|---------|---------|-------------------
 File             | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------|---------|----------|---------|---------|-------------------
-All files        |   67.85 |    61.53 |   66.66 |   67.85 |                   
- ts-compiled     |    82.6 |    66.66 |     100 |    82.6 |                   
-  loaded.ts      |   78.94 |    66.66 |     100 |   78.94 | 5,16-18           
+All files        |   64.28 |    57.14 |      50 |   64.28 |                   
+ ts-compiled     |   78.26 |    66.66 |     100 |   78.26 |                   
+  loaded.ts      |   73.68 |    66.66 |     100 |   73.68 | 4-5,16-18         
   main.ts        |     100 |      100 |     100 |     100 |                   
  ts-compiled/dir |       0 |        0 |       0 |       0 |                   
   unloaded.ts    |       0 |        0 |       0 |       0 | 1-5               
@@ -461,7 +462,7 @@ All files     |       0 |        0 |       0 |       0 |
  ts-only/dir  |       0 |        0 |       0 |       0 |                   
   unloaded.ts |       0 |        0 |       0 |       0 | 1-5               
 --------------|---------|----------|---------|---------|-------------------
-,(node:15230) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/coderaiser/c8/test/fixtures/all/ts-only/main.ts is not specified and it doesn't parse as CommonJS.
+,(node:16146) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/coderaiser/c8/test/fixtures/all/ts-only/main.ts is not specified and it doesn't parse as CommonJS.
 Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
 To eliminate this warning, add \\"type\\": \\"module\\" to /Users/coderaiser/c8/package.json.
 (Use \`node --trace-warnings ...\` to show where the warning was created)
@@ -489,22 +490,22 @@ negative
 --------------|---------|----------|---------|---------|-------------------
 File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------|---------|----------|---------|---------|-------------------
-All files     |   64.28 |       75 |   66.66 |   64.28 |                   
- vanilla      |   78.26 |       80 |     100 |   78.26 |                   
-  loaded.js   |   73.68 |    76.92 |     100 |   73.68 | 4-5,16-18         
+All files     |   64.28 |    66.66 |      50 |   64.28 |                   
+ vanilla      |   78.26 |       75 |     100 |   78.26 |                   
+  loaded.js   |   73.68 |    71.42 |     100 |   73.68 | 4-5,16-18         
   main.js     |     100 |      100 |     100 |     100 |                   
  vanilla/dir  |       0 |        0 |       0 |       0 |                   
   unloaded.js |       0 |        0 |       0 |       0 | 1-5               
 --------------|---------|----------|---------|---------|-------------------
 ,ERROR: Coverage for lines (64.28%) does not meet global threshold (100%)
-ERROR: Coverage for branches (75%) does not meet global threshold (82%)
+ERROR: Coverage for branches (66.66%) does not meet global threshold (82%)
 ERROR: Coverage for statements (64.28%) does not meet global threshold (95%)
 "
 `;
 
 exports[`c8 mergeAsync --all should allow for --all to be used with the check-coverage command (2 invocations) 1`] = `
 ",,ERROR: Coverage for lines (64.28%) does not meet global threshold (90%)
-ERROR: Coverage for branches (75%) does not meet global threshold (82%)
+ERROR: Coverage for branches (66.66%) does not meet global threshold (82%)
 ERROR: Coverage for statements (64.28%) does not meet global threshold (95%)
 "
 `;
@@ -555,7 +556,7 @@ File                                   | % Stmts | % Branch | % Funcs | % Lines 
 ---------------------------------------|---------|----------|---------|---------|------------------------
 All files                              |    3.02 |    11.76 |    6.12 |    3.02 |                        
  c8                                    |       0 |        0 |       0 |       0 |                        
-  .madrun.js                           |       0 |        0 |       0 |       0 | 1-18                   
+  .madrun.js                           |       0 |        0 |       0 |       0 | 1-16                   
   eslint.config.js                     |       0 |        0 |       0 |       0 | 1-3                    
   index.js                             |       0 |        0 |       0 |       0 | 1                      
  c8/bin                                |       0 |        0 |       0 |       0 |                        
@@ -566,7 +567,7 @@ All files                              |    3.02 |    11.76 |    6.12 |    3.02 
   sorter.js                            |       0 |        0 |       0 |       0 | 1-210                  
  c8/lib                                |       0 |        0 |       0 |       0 |                        
   parse-args.js                        |       0 |        0 |       0 |       0 | 1-234                  
-  report.js                            |       0 |        0 |       0 |       0 | 1-577                  
+  report.js                            |       0 |        0 |       0 |       0 | 1-579                  
   source-map-from-file.js              |       0 |        0 |       0 |       0 | 1-108                  
  c8/lib/commands                       |       0 |        0 |       0 |       0 |                        
   check-coverage.js                    |       0 |        0 |       0 |       0 | 1-82                   
@@ -625,9 +626,9 @@ exports[`c8 mergeAsync ESM Modules collects coverage for ESM modules 1`] = `
 ------------|---------|----------|---------|---------|-------------------
 File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------|---------|----------|---------|---------|-------------------
-All files   |      75 |      100 |      60 |      75 |                   
+All files   |   83.33 |      100 |   66.66 |   83.33 |                   
  export.cjs |     100 |      100 |     100 |     100 |                   
- export.mjs |   57.14 |      100 |      50 |   57.14 | 2-4               
+ export.mjs |   71.42 |      100 |      50 |   71.42 | 2-3               
  import.mjs |     100 |      100 |     100 |     100 |                   
 ------------|---------|----------|---------|---------|-------------------
 ,"
@@ -668,20 +669,20 @@ hey
 -----------|---------|----------|---------|---------|-------------------
 File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------|---------|----------|---------|---------|-------------------
-All files  |      75 |    85.71 |      60 |      75 |                   
+All files  |   83.33 |    85.71 |      60 |   83.33 |                   
  async.js  |     100 |      100 |     100 |     100 |                   
- normal.js |    62.5 |    66.66 |   33.33 |    62.5 | 14-22             
+ normal.js |      75 |    66.66 |   33.33 |      75 | 14-16,18-20       
 -----------|---------|----------|---------|---------|-------------------
-,ERROR: Coverage for lines (75%) does not meet global threshold (101%)
-ERROR: Coverage for statements (75%) does not meet global threshold (95%)
+,ERROR: Coverage for lines (83.33%) does not meet global threshold (101%)
+ERROR: Coverage for statements (83.33%) does not meet global threshold (95%)
 "
 `;
 
 exports[`c8 mergeAsync check-coverage allows threshold to be applied on per-file basis 1`] = `
 ",,ERROR: Coverage for lines (100%) does not meet threshold (101%) for test/fixtures/async.js
-ERROR: Coverage for lines (62.5%) does not meet threshold (101%) for test/fixtures/normal.js
+ERROR: Coverage for lines (75%) does not meet threshold (101%) for test/fixtures/normal.js
 ERROR: Coverage for branches (66.66%) does not meet threshold (82%) for test/fixtures/normal.js
-ERROR: Coverage for statements (62.5%) does not meet threshold (95%) for test/fixtures/normal.js
+ERROR: Coverage for statements (75%) does not meet threshold (95%) for test/fixtures/normal.js
 "
 `;
 
@@ -696,8 +697,8 @@ ERROR: Coverage for statements (83.33%) does not meet global threshold (100%)
 exports[`c8 mergeAsync check-coverage exits with 0 if coverage within threshold 1`] = `",,"`;
 
 exports[`c8 mergeAsync check-coverage exits with 1 if coverage is below threshold 1`] = `
-",,ERROR: Coverage for lines (75%) does not meet global threshold (101%)
-ERROR: Coverage for statements (75%) does not meet global threshold (95%)
+",,ERROR: Coverage for lines (83.33%) does not meet global threshold (101%)
+ERROR: Coverage for statements (83.33%) does not meet global threshold (95%)
 "
 `;
 
@@ -808,10 +809,10 @@ negative
 │ test/fixtures/all/vanilla │          │            │          │           │          │                 │
 │ ├ dir                     │          │            │          │           │          │                 │
 │ │ └ unloaded.js           │   0.00 % │     0.00 % │          │    0.00 % │   0.00 % │ 1-5             │
-│ ├ loaded.js               │  74.91 % │    80.00 % │  75.00 % │  100.00 % │  63.16 % │ 3-6,16-18       │
+│ ├ loaded.js               │  81.44 % │    80.00 % │  75.00 % │  100.00 % │  68.42 % │ 3-5,16-18       │
 │ └ main.js                 │ 100.00 % │   100.00 % │          │           │ 100.00 % │                 │
 ├───────────────────────────┼──────────┼────────────┼──────────┼───────────┼──────────┼─────────────────┤
-│ Summary                   │  62.57 % │    70.59 % │  75.00 % │   50.00 % │  59.26 % │                 │
+│ Summary                   │  66.22 % │    70.59 % │  75.00 % │   50.00 % │  62.96 % │                 │
 └───────────────────────────┴──────────┴────────────┴──────────┴───────────┴──────────┴─────────────────┘
 ,"
 `;
@@ -854,12 +855,11 @@ hey
 ├───────────────┼──────────┼────────────┼──────────┼───────────┼──────────┼─────────────────┤
 │ test/fixtures │          │            │          │           │          │                 │
 │ ├ async.js    │ 100.00 % │   100.00 % │          │  100.00 % │ 100.00 % │                 │
-│ └ normal.js   │  69.03 % │    83.33 % │  62.50 % │   33.33 % │  52.94 % │ 9-10,14-23      │
+│ └ normal.js   │  77.99 % │    83.33 % │  62.50 % │   33.33 % │  70.59 % │ 9,14-20         │
 ├───────────────┼──────────┼────────────┼──────────┼───────────┼──────────┼─────────────────┤
-│ Summary       │  78.33 % │    88.89 % │  62.50 % │   66.67 % │  69.23 % │                 │
+│ Summary       │  84.60 % │    88.89 % │  62.50 % │   66.67 % │  80.77 % │                 │
 └───────────────┴──────────┴────────────┴──────────┴───────────┴──────────┴─────────────────┘
-,ERROR: Coverage for lines (69.23%) does not meet global threshold (80%)
-ERROR: Coverage for branches (62.5%) does not meet global threshold (80%)
+,ERROR: Coverage for branches (62.5%) does not meet global threshold (80%)
 "
 `;
 
@@ -900,9 +900,9 @@ hey
 ├───────────────┼──────────┼────────────┼──────────┼───────────┼──────────┼─────────────────┤
 │ test/fixtures │          │            │          │           │          │                 │
 │ ├ async.js    │ 100.00 % │   100.00 % │          │  100.00 % │ 100.00 % │                 │
-│ └ normal.js   │  69.03 % │    83.33 % │  62.50 % │   33.33 % │  52.94 % │ 9-10,14-23      │
+│ └ normal.js   │  77.99 % │    83.33 % │  62.50 % │   33.33 % │  70.59 % │ 9,14-20         │
 ├───────────────┼──────────┼────────────┼──────────┼───────────┼──────────┼─────────────────┤
-│ Summary       │  78.33 % │    88.89 % │  62.50 % │   66.67 % │  69.23 % │                 │
+│ Summary       │  84.60 % │    88.89 % │  62.50 % │   66.67 % │  80.77 % │                 │
 └───────────────┴──────────┴────────────┴──────────┴───────────┴──────────┴─────────────────┘
 ,"
 `;
@@ -911,9 +911,9 @@ exports[`c8 mergeAsync report generates report from existing temporary files 1`]
 ",-----------|---------|----------|---------|---------|-------------------
 File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------|---------|----------|---------|---------|-------------------
-All files  |      75 |    85.71 |      60 |      75 |                   
+All files  |   83.33 |    85.71 |      60 |   83.33 |                   
  async.js  |     100 |      100 |     100 |     100 |                   
- normal.js |    62.5 |    66.66 |   33.33 |    62.5 | 14-22             
+ normal.js |      75 |    66.66 |   33.33 |      75 | 14-16,18-20       
 -----------|---------|----------|---------|---------|-------------------
 ,"
 `;
@@ -922,12 +922,12 @@ exports[`c8 mergeAsync report supports --check-coverage, when generating reports
 ",-----------|---------|----------|---------|---------|-------------------
 File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------|---------|----------|---------|---------|-------------------
-All files  |      75 |    85.71 |      60 |      75 |                   
+All files  |   83.33 |    85.71 |      60 |   83.33 |                   
  async.js  |     100 |      100 |     100 |     100 |                   
- normal.js |    62.5 |    66.66 |   33.33 |    62.5 | 14-22             
+ normal.js |      75 |    66.66 |   33.33 |      75 | 14-16,18-20       
 -----------|---------|----------|---------|---------|-------------------
-,ERROR: Coverage for lines (75%) does not meet global threshold (101%)
-ERROR: Coverage for statements (75%) does not meet global threshold (95%)
+,ERROR: Coverage for lines (83.33%) does not meet global threshold (101%)
+ERROR: Coverage for statements (83.33%) does not meet global threshold (95%)
 "
 `;
 

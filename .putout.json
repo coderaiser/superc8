@@ -22,7 +22,6 @@
         "types/convert-typeof-to-is-type": "off",
         "conditions/merge-if-statements": "off",
         "conditions/remove-useless-else": "off",
-        "for-of/for-each": "off",
         "apply-at": "off",
         "destructuring/apply-array": "off",
         "destructuring/convert-object-to-array": "off",
