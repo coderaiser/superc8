@@ -4,13 +4,19 @@
 ![nycrc config on GitHub](https://img.shields.io/nycrc/bcoe/c8)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://www.conventionalcommits.org/)
 
+For of `c8` contains:
+
+- ✅Fixed TODO (https://github.com/bcoe/c8/blob/main/lib/parse-args.js#L176, https://github.com/bcoe/c8/blob/ee2f1cfc5584d41bb2d51b788d0953dab0c798f8/lib/commands/check-coverage.js#L14);
+- ✅Migrated to ESM;
+- ✅Updated all dependencies, including `yargs` that makes `node v25` crash (https://github.com/bcoe/c8/issues/582);
+
 Code-coverage using [Node.js' built in functionality](https://nodejs.org/dist/latest-v10.x/docs/api/cli.html#cli_node_v8_coverage_dir)
 that's compatible with [Istanbul's reporters](https://istanbul.js.org/docs/advanced/alternative-reporters/).
 
 Like [nyc](https://github.com/istanbuljs/nyc), c8 just magically works:
 
 ```sh
-npm i c8 -g
+npm i superc8 -g
 c8 node foo.js
 ```
 
@@ -188,7 +194,7 @@ const os = process.platform === 'darwin' ? 'OSXy' /* c8 ignore next */ : 'Window
 ## Supported Node.js Versions
 
 c8 uses [native V8 coverage](https://github.com/nodejs/node/pull/22527),
-make sure you're running Node.js `>= 12`.
+make sure you're running Node.js `>= 22`.
 
 ## Contributing to `c8`
 
