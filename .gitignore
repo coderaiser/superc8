@@ -1,6 +1,11 @@
+*.swp
+*.log
+*.lock
+
 .DS_Store
-node_modules
 .nyc_output
+.idea
+
+node_modules
 coverage
 tmp
-.idea

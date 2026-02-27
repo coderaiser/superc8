@@ -23,12 +23,11 @@ async function run() {
     ].includes(argv._[0])) {
         argv = buildYargs(true).parse(process.argv.slice(2));
     } else {
-        if (argv.clean) {
+        if (argv.clean)
             await rm(argv.tempDirectory, {
                 recursive: true,
                 force: true,
             });
-        }
         
         await mkdir(argv.tempDirectory, {
             recursive: true,

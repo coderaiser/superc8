@@ -1,15 +1,10 @@
 {
     "rules": {
-        "gitignore/add": "off",
-        "gitignore/sort": "off",
         "typescript/convert-generic-to-shorthand": "off",
         "nodejs/add-missing-strict-mode": "off",
         "nodejs/declare": "off",
         "nodejs/add-node-prefix": "off",
-        "conditions/apply-consistent-blocks": "off",
         "variables/remove-unused": "off",
-        "apply-shorthand-properties": "off",
-        "destructuring/apply-object": "off",
         "maybe/array": "off",
         "remove-console": "off",
         "convert-to-arrow-function": "off",

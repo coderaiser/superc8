@@ -45,7 +45,7 @@ describe('parse-args', () => {
     
     describe('with NODE_V8_COVERAGE already set', () => {
         it('should not override it', () => {
-            const NODE_V8_COVERAGE = process.env.NODE_V8_COVERAGE;
+            const {NODE_V8_COVERAGE} = process.env;
             
             process.env.NODE_V8_COVERAGE = './coverage/tmp_';
             process.argv = [
