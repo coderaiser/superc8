@@ -1,0 +1,78 @@
+2026.02.27, v1.0.1
+
+fix:
+- 3a9a2c0 package: issues
+- 678eeca (deps)!: pull newer minimatch addressing CVE-2026-26996 (#576)
+- b32a563 (deps): update bcoe/v8-coverage addressing v8 issue (#552)
+- 3b91fda (deps): make monocart-coverage-reports an optional with meta defined
+- 13979a7 stop installing monocart-coverage-reports (#535)
+- e33cf30 (deps)!: update test-exclude with new glob / minimatch (#531)
+- 5e18365 (refactor): remove stale check for createDynamicModule
+- 3be8bd9 (deps): update istanbul deps (#485)
+- a5deb27 `--all` now respects `--extension` flag. (#357)
+- 8b36f23 (perf): cache `this.exclude.shouldInstrument` for improved performance (#388)
+- d5f642a (deps): v8-to-istnbul with fixes for Node 10/18 (#392)
+- 78eac8c (deps): update deps to latest (#384)
+- 5d2981c fix package.json `test:snap` script to use cross-env (#366)
+- e81ed5d (config): support configuration inheritance (#343)
+- ef1b875 (deps): v8-to-istanbul with fix for Windows paths (#311)
+- c817902 address bugs with source remapping on Windows (#301)
+- e32a53f (types): add excludeAfterRemap and allowExternal  (#297)
+- 21cd41f (v8-to-istanbul): fixes shebang handling/ignore behavior (#267)
+- 1b90a22 support node@v15.x.x built-in modules (#265)
+- 81ab5b7 (v8-to-istanbul): revert off by one that broke TypeScript (#262)
+- eaffa78 (v8-to-istanbul): pull in fix for missing branches (#258)
+- 0436816 (deps): update dependency yargs to v16 (#251)
+- ae845f0 (deps): update dependency yargs-parser to v20 (#252)
+- efe6d04 add missing space in text (#245)
+- baa01df (deps): update dependency yargs-parser to v19 (#241)
+- 8a0cfd7 (deps): update dependency find-up to v5 (#242)
+- eed98af ignore missing source maps in raw coverage output (#233)
+- 983de44 (deps): update dependency yargs-parser to v18 (#202)
+- e93747b escaping issue with cobertura reporter (#203)
+- d730c63 (deps): update dependency yargs-parser to v17 (#201)
+- d4b7d80 (deps): v8-to-istanbul with patch for crasher (#200)
+- 6b9af6e (deps): update dependency furi to v2 (#193)
+- 86eaf72 all flag not propagated to check-coverage command (#188)
+- 97b9769 (deps): update dependency v8-to-istanbul to v4 (#167)
+- e41a483 (deps): update dependency yargs to v15 (#164)
+- 15746e5 (deps): update dependency yargs-parser to v16 (#157)
+- a9d9645 regex flags in dependency were breaking Node 8
+- 80153de (deps): update dependency yargs-parser to v15 (#153)
+- 1ebcaf9 (deps): merging failed when the same script occurred multiple times in the same report (#147)
+- a6481f1 don't load JSON that does not look like coverage (#146)
+- 9b3d089 (deps): update dependency yargs-parser to v14 (#144)
+- 4b66221 (deps): update deps to address warning in cross-spawn (#141)
+- 7601748 (deps): update dependency rimraf to v3 (#132)
+- e49737f (deps): update dependency yargs to v14 (#134)
+- c49fa7f HTML report now has correct source positions for Node >10.16.0 (#125)
+- 1eb3394 (deps): update dependency yargs-parser to v13 (#124)
+- c568d96 (deps): update dependency find-up to v4 (#119)
+- 8bb67b0 do not override NODE_V8_COVERAGE if set (#70)
+- 64dd2e6 temporary files should be in tmp folder (#106)
+- a465b65 remove the unmaintained mkdirp dependency (#91)
+- a27b694 exit with code 1 when report output fails (#92)
+- fb02ed6 we were not exiting with 1 if mkdir failed (#89)
+- 206b83f switch to mkdirp for Node 8
+- 44d2185 make tmp directory regardless of clean
+- 6c28e7f upgrade to @bcoe/v8-coverage with breaking regex dropped
+- da2c945 exclude coverage of the CJS-ESM bridge from results (#83)
+- 1de0cca float patch for branch/function coverage merge bug (#56)
+- 7fd9e13 snapshot
+- e7f8cf2 file URL to system path conversion (#46)
+- d4f9cab address file:// issue with CJS (#39)
+- 67959b4 process coverage merging (#37)
+- 08e44d0 make tests run on Windows (#25)
+- 01f654e tweak inspector event timing (#6)
+- d1ced8c pin to functional version of spawn-wrap
+
+feature:
+- ef37097 superc8: migrate to ESM
+- 2bdc628 c8: yargs-parser v22.0.0
+- f3d66c9 c8: yargs v18.0.0
+- 84982f7 c8: standard v17.1.2
+- ca3698c c8: foreground-child v4.0.3
+- 8e24e68 c8: find-up v8.0.0
+- 7100e10 c8: cross-env v10.1.0
+- a7df284 c8: @types/node v25.3.2
+- e66c479 c8: chai v6.2.2
