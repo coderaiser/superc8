@@ -1,18 +1,7 @@
 {
     "rules": {
-        "typescript/convert-generic-to-shorthand": "off",
-        "remove-console": "off",
-        "convert-to-arrow-function": "off",
-        "convert-template-to-string": "off",
-        "conditions/merge-if-statements": "off",
-        "conditions/remove-useless-else": "off",
         "tape/jest": "off",
-        "nodejs/declare-after-require": "off",
-        "conditions/evaluate": "off",
-        "remove-unused-expressions": "off",
-        "simplify-ternary/value": "off",
-        "variables/remove-useless": "off",
-        "conditions/apply-equal": "off"
+        "remove-console": "off"
     },
     "ignore": ["tmp", "fixtures"]
 }
