@@ -1,3 +1,20 @@
+2026.02.27, v12.0.0
+
+fix:
+- e0a9927 versions
+- 3a9a2c0 package: issues
+
+feature:
+- ef37097 superc8: migrate to ESM
+- 2bdc628 c8: yargs-parser v22.0.0
+- f3d66c9 c8: yargs v18.0.0
+- 84982f7 c8: standard v17.1.2
+- ca3698c c8: foreground-child v4.0.3
+- 8e24e68 c8: find-up v8.0.0
+- 7100e10 c8: cross-env v10.1.0
+- a7df284 c8: @types/node v25.3.2
+- e66c479 c8: chai v6.2.2
+
 2026.02.27, v1.0.1
 
 fix:
