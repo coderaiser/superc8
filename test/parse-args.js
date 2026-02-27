@@ -79,6 +79,7 @@ describe('parse-args', () => {
                 '--config',
                 require.resolve('./fixtures/config/.c8rc.json'),
             ]);
+            
             argv.lines.should.be.equal(101);
             argv.tempDirectory.should.be.equal('./foo');
         });
@@ -89,6 +90,7 @@ describe('parse-args', () => {
                 '-c',
                 require.resolve('./fixtures/config/.c8rc.json'),
             ]);
+            
             argv.lines.should.be.equal(101);
             argv.tempDirectory.should.be.equal('./foo');
         });
@@ -101,6 +103,7 @@ describe('parse-args', () => {
                 '--config',
                 require.resolve('./fixtures/config/.c8rc.json'),
             ]);
+            
             argv.lines.should.be.equal(100);
         });
         it('should allow config files to extend each other', () => {
@@ -112,6 +115,7 @@ describe('parse-args', () => {
                 '--config',
                 require.resolve('./fixtures/config/.c8rc-base.json'),
             ]);
+            
             argv.branches.should.be.equal(55);
             argv.lines.should.be.equal(100);
             argv.functions.should.be.equal(24);
@@ -125,6 +129,7 @@ describe('parse-args', () => {
                 '--reports-dir',
                 './coverage_',
             ];
+            
             const argv = buildYargs().parse(argsArray);
             
             argv.reportsDir.should.be.equal('./coverage_');
@@ -138,6 +143,7 @@ describe('parse-args', () => {
                 '--temp-directory',
                 './coverage/tmp_',
             ];
+            
             const argv = buildYargs().parse(argsArray);
             
             argv.tempDirectory.should.be.equal('./coverage/tmp_');
@@ -152,6 +158,7 @@ describe('parse-args', () => {
                 '--reports-dir',
                 tmpDir,
             ];
+            
             const argv = buildYargs().parse(argsArray);
             
             argv.reportsDir.should.be.equal(tmpDir);
@@ -166,6 +173,7 @@ describe('parse-args', () => {
                 '--temp-directory',
                 tmpDir,
             ];
+            
             const argv = buildYargs().parse(argsArray);
             
             argv.tempDirectory.should.be.equal(tmpDir);

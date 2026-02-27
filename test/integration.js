@@ -18,7 +18,7 @@ before((cb) => rm('tmp', {recursive: true, force: true}, cb));
 beforeEach(function() {
     chaiJestSnapshot.configureUsingMochaContext(this);
 });
-[false, true].forEach((mergeAsync) => {
+for (const mergeAsync of [false, true]) {
     const title = mergeAsync ? 'c8 mergeAsync' : 'c8';
     
     describe(title, () => {
@@ -54,6 +54,7 @@ beforeEach(function() {
             });
             
             const stats = statSync('tmp/override');
+            
             stats
                 .isDirectory()
                 .should
@@ -1027,4 +1028,4 @@ beforeEach(function() {
             });
         });
     });
-});
+}
