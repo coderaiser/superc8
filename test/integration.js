@@ -3,9 +3,10 @@ const {
     readFileSync,
     statSync,
     rm,
-} = require('fs');
-const {resolve, dirname} = require('path');
-const {spawnSync} = require('child_process');
+} = require('node:fs');
+
+const {resolve, dirname} = require('node:path');
+const {spawnSync} = require('node:child_process');
 
 const c8Path = require.resolve('../bin/c8');
 const nodePath = process.execPath;

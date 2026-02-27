@@ -2,9 +2,9 @@
 
 'use strict';
 
+const {rm, mkdir} = require('node:fs/promises');
 const {foregroundChild} = require('foreground-child');
 
-const {rm, mkdir} = require('fs/promises');
 const {outputReport} = require('../lib/commands/report');
 
 const {

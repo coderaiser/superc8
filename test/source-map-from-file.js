@@ -1,6 +1,6 @@
 /* global describe, it */
-const assert = require('assert');
-const {readFileSync} = require('fs');
+const assert = require('node:assert');
+const {readFileSync} = require('node:fs');
 const getSourceMapFromFile = require('../lib/source-map-from-file');
 
 describe('source-map-from-file', () => {

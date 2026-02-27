@@ -1,5 +1,5 @@
 /* global describe, it */
-const {join, resolve} = require('path');
+const {join, resolve} = require('node:path');
 const {
     buildYargs,
     hideInstrumenteeArgs,
