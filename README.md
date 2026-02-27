@@ -58,7 +58,7 @@ into the report with a default of 0% coverage.
 
 ## SourceMap Support
 
-`c8` can handle source-maps, for remapping coverage from generated code to original source files (_useful for TypeScript, JSX, etc_).
+`c8` can handle source-maps, for remapping coverage from generated code to original source files (*useful for TypeScript, JSX, etc*).
 
 ### Source map files versus inline source maps
 
@@ -121,6 +121,7 @@ c8 check-coverage --100
 ```
 
 ## Using Monocart coverage reports (experimental)
+
 Monocart is an alternate library for outputting [v8 code coverage](https://v8.dev/blog/javascript-code-coverage) data as Istanbul reports.
 
 Monocart also provides reporters based directly on v8's byte-offset-based output. Such as, `console-details` and `v8`. This removes a complex transformation step and may be less bug prone for some environments.
@@ -150,18 +151,21 @@ To ignore lines, blocks, and functions, use the special comment:
 ### Ignoring the next line
 
 ```js
-const myVariable = 99
+const myVariable = 99;
+
 /* c8 ignore next */
-if (process.platform === 'win32') console.info('hello world')
+if (process.platform === 'win32')
+    console.info('hello world');
 ```
 
 ### Ignoring the next N lines
 
 ```js
-const myVariable = 99
+const myVariable = 99;
+
 /* c8 ignore next 3 */
 if (process.platform === 'win32') {
-  console.info('hello world')
+    console.info('hello world');
 }
 ```
 
@@ -170,16 +174,15 @@ if (process.platform === 'win32') {
 ```js
 /* c8 ignore start */
 function dontMindMe() {
-  // ...
-}
-/* c8 ignore stop */
+    // ...
+} /* c8 ignore stop */
 ```
 
 ### Ignoring a block on the current line
 
 ```js
-const myVariable = 99
-const os = process.platform === 'darwin' ? 'OSXy' /* c8 ignore next */ : 'Windowsy'
+const myVariable = 99;
+const os = process.platform === 'darwin' ? 'OSXy' /* c8 ignore next */ : 'Windowsy';
 ```
 
 ## Supported Node.js Versions

@@ -8,7 +8,9 @@ Contributors guide: https://github.com/bcoe/c8/blob/main/CONTRIBUTING.md
 -->
 
 ##### Checklist
+
 <!-- Remove items that do not apply. For completed items, change [ ] to [x]. -->
+
 - [ ] `npm test`, tests passing
 - [ ] `npm run test:snap` (to update the snapshot)
 - [ ] tests and/or benchmarks are included

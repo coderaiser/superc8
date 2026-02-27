@@ -12,7 +12,7 @@ If possible, please provide code that demonstrates the problem, keeping it as
 simple and free of external dependencies as you are able.
 -->
 
-* **Version**:
-* **Platform**:
+- **Version**:
+- **Platform**:
 
 <!-- Enter your issue details below this comment. -->

@@ -3,7 +3,6 @@
         "gitignore/add": "off",
         "gitignore/sort": "off",
         "typescript/convert-generic-to-shorthand": "off",
-        "nodejs/convert-exports-to-module-exports": "off",
         "nodejs/add-missing-strict-mode": "off",
         "package-json/add-type": "off",
         "package-json/apply-https-to-repository-url": "off",
@@ -46,7 +45,5 @@
         "conditions/remove-zero": "off",
         "apply-dot-notation": "off"
     },
-    "ignore": [
-        "tmp"
-    ]
+    "ignore": ["tmp", "fixtures"]
 }
