@@ -1,9 +1,6 @@
 {
     "rules": {
         "typescript/convert-generic-to-shorthand": "off",
-        "nodejs/add-missing-strict-mode": "off",
-        "nodejs/declare": "off",
-        "variables/remove-unused": "off",
         "remove-console": "off",
         "convert-to-arrow-function": "off",
         "convert-template-to-string": "off",

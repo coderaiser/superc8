@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import {rm, mkdir} from 'node:fs/promises';
+import process from 'node:process';
 import {foregroundChild} from 'foreground-child';
 import {tryToCatch} from 'try-to-catch';
 import {outputReport} from '../lib/commands/report.js';
@@ -32,7 +33,7 @@ async function run() {
                 recursive: true,
                 force: true,
             });
-
+        
         await mkdir(argv.tempDirectory, {
             recursive: true,
         });
