@@ -1,13 +1,14 @@
 {
   "name": "c8",
   "version": "11.0.0",
+  "type": "commonjs",
   "description": "output coverage reports using Node.js' built in coverage",
   "main": "./index.js",
   "types": "./index.d.ts",
   "bin": "./bin/c8.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:bcoe/c8.git"
+    "url": "git+https://github.com/coderaiser/superc8"
   },
   "scripts": {
     "lint": "madrun lint",

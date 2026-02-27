@@ -19,7 +19,7 @@ async function run() {
     if ([
         'check-coverage',
         'report',
-    ].indexOf(argv._[0]) !== -1) {
+    ].includes(argv._[0])) {
         argv = buildYargs(true).parse(process.argv.slice(2));
     } else {
         if (argv.clean) {
