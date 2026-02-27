@@ -1,7 +1,6 @@
 {
     "rules": {
-        "tape/jest": "off",
-        "remove-console": "off"
+        "tape/jest": "off"
     },
     "ignore": ["tmp", "fixtures"]
 }
