@@ -1,6 +1,7 @@
 {
     "rules": {
-        "tape/jest": "off"
+        "tape/jest": "off",
+        "tape/remove-skip": "off"
     },
     "ignore": ["tmp", "fixtures"]
 }

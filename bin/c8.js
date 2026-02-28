@@ -22,30 +22,33 @@ if (error) {
 }
 
 async function run() {
-    if ([
+    const is = [
         'check-coverage',
         'report',
-    ].includes(argv._[0])) {
+    ].includes(argv._[0]);
+    
+    if (is) {
         argv = buildYargs(true).parse(process.argv.slice(2));
-    } else {
-        if (argv.clean)
-            await rm(argv.tempDirectory, {
-                recursive: true,
-                force: true,
-            });
-        
-        await mkdir(argv.tempDirectory, {
-            recursive: true,
-        });
-        process.env.NODE_V8_COVERAGE = argv.tempDirectory;
-        foregroundChild(hideInstrumenterArgs(argv), async () => {
-            try {
-                await outputReport(argv);
-                return process.exitCode;
-            } catch(err) {
-                console.error(err.stack);
-                return 1;
-            }
-        });
+        return;
     }
+    
+    if (argv.clean)
+        await rm(argv.tempDirectory, {
+            recursive: true,
+            force: true,
+        });
+    
+    await mkdir(argv.tempDirectory, {
+        recursive: true,
+    });
+    process.env.NODE_V8_COVERAGE = argv.tempDirectory;
+    foregroundChild(hideInstrumenterArgs(argv), async () => {
+        try {
+            await outputReport(argv);
+            return process.exitCode;
+        } catch(err) {
+            console.error(err.stack);
+            return 1;
+        }
+    });
 }
