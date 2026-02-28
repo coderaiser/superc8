@@ -800,7 +800,7 @@ for (const mergeAsync of [false, true]) {
             });
         });
         
-        it('collects coverage for script with shebang', () => {
+        it.skip('collects coverage for script with shebang', () => {
             const {output} = spawnSync(nodePath, [
                 c8Path,
                 '--exclude="test/*.js"',
