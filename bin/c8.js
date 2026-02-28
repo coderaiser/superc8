@@ -4,7 +4,7 @@ import {rm, mkdir} from 'node:fs/promises';
 import process from 'node:process';
 import {foregroundChild} from 'foreground-child';
 import {tryToCatch} from 'try-to-catch';
-import {outputReport} from '../lib/commands/report.js';
+import {outputReport} from '#commands/report';
 import {
     buildYargs,
     hideInstrumenteeArgs,

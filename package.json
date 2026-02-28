@@ -14,7 +14,9 @@
     "url": "git+https://github.com/coderaiser/superc8.git"
   },
   "imports": {
-    "#report": "./lib/report/index.js"
+    "#report": "./lib/report/index.js",
+    "#commands/report": "./lib/commands/report.js",
+    "#commands/check-coverage": "./lib/commands/check-coverage.js"
   },
   "scripts": {
     "lint": "madrun lint",

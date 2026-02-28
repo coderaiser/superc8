@@ -12,6 +12,7 @@
 - ✅ Applied 🐊[**Putout**](https://github.com/coderaiser/putout) default suggestions;
 - ✅ Up coverage to 100%;
 - ✅ Disabled flacky tests;
+- ✅ Applied private imports;
 
 Code-coverage using [Node.js' built in functionality](https://nodejs.org/dist/latest-v10.x/docs/api/cli.html#cli_node_v8_coverage_dir)
 that's compatible with [Istanbul's reporters](https://istanbul.js.org/docs/advanced/alternative-reporters/).
