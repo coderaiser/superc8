@@ -11,8 +11,8 @@ const fixtureEnv = {
 export default {
     'lint': () => 'putout .',
     'fix:lint': () => run('lint', '--fix'),
-    'test': () => './bin/c8.js mocha --timeout=10000 ./test/*.js',
-    'coverage': () => [env, './bin/c8.js --check-coverage mocha --timeout=10000 ./test/*.js'],
+    'test': () => `./bin/c8.js mocha --timeout=10000 ./test/*.js 'lib/**/*.spec.js'`,
+    'coverage': () => [env, `./bin/c8.js --check-coverage mocha --timeout=10000 ./test/*.js 'lib/**/*.spec.js'`],
     'test:snap': () => [fixtureEnv, 'npm test'],
     'fixture': async () => [fixtureEnv, await cutEnv('test:snap')],
 };

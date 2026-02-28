@@ -58,6 +58,7 @@
     "madrun": "^13.0.0",
     "mocha": "^11.0.1",
     "putout": "^42.0.18",
+    "supertape": "^12.5.0",
     "ts-node": "^10.7.0",
     "typescript": "^5.0.0"
   },
