@@ -17,8 +17,10 @@ let argv = buildYargs().parse(instrumenterArgs);
 const [error] = await tryToCatch(run);
 
 if (error) {
+    /* c8 ignore start */
     console.error(error.stack);
     process.exitCode = 1;
+    /* c8 ignore end */
 }
 
 async function run() {

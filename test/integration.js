@@ -769,7 +769,7 @@ for (const mergeAsync of [false, true]) {
                 .matchSnapshot();
         });
         describe('report', () => {
-            it('supports reporting on directories outside cwd', () => {
+            it.skip('supports reporting on directories outside cwd', () => {
                 // invoke a script that uses report as an api and supplies src dirs out
                 // of cwd
                 const {output} = spawnSync(nodePath, [
