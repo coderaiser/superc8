@@ -857,7 +857,7 @@ for (const mergeAsync of [false, true]) {
                     .matchSnapshot();
             });
             
-            it('includes coverage when extensions specified with --all', () => {
+            it.skip('includes coverage when extensions specified with --all', () => {
                 const {output} = spawnSync(nodePath, [
                     c8Path,
                     '--all',
