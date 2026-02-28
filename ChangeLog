@@ -1,3 +1,8 @@
+2026.02.28, v12.0.2
+
+feature:
+- e1775a8 superc8: apply try-to-catch
+
 2026.02.28, v12.0.1
 
 feature:
