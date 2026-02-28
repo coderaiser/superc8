@@ -21,8 +21,8 @@ if (error) {
     console.error(error.stack);
     process.exitCode = 1;
 }
-/* c8 ignore end */
 
+/* c8 ignore end */
 async function run() {
     const is = [
         'check-coverage',
@@ -45,12 +45,13 @@ async function run() {
     });
     process.env.NODE_V8_COVERAGE = argv.tempDirectory;
     foregroundChild(hideInstrumenterArgs(argv), async () => {
-        try {
-            await outputReport(argv);
-            return process.exitCode;
-        } catch(err) {
-            console.error(err.stack);
+        const [error] = await tryToCatch(outputReport, argv);
+        
+        if (error) {
+            console.error(error.stack);
             return 1;
         }
+        
+        return process.exitCode;
     });
 }
