@@ -1,1 +1,8 @@
 *.spec.js
+*.log
+*.config.*
+*.loc
+
+.*
+
+coverage
