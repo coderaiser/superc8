@@ -1,3 +1,10 @@
+2026.02.28, v12.1.0
+
+feature:
+- d796500 report: process-file: add
+- 3fbbb80 check-coverage: rm unused
+- ec979d6 superc8: apply try-catch
+
 2026.02.28, v12.0.4
 
 fix:
