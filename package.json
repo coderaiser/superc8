@@ -24,7 +24,8 @@
     "test": "madrun test",
     "coverage": "madrun coverage",
     "test:snap": "madrun test:snap",
-    "fixture": "madrun fixture"
+    "fixture": "madrun fixture",
+    "report": "madrun report"
   },
   "keywords": [
     "coverage",
