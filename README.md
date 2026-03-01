@@ -1,4 +1,4 @@
-# SuperC8 [![NPM version][NPMIMGURL]][NPMURL] [![Build Status][BuildStatusIMGURL]][BuildStatusURL] [![Coverage Status][CoverageIMGURL]][CoverageURL] [![DeepScan][DeepScanIMGURL]][DeepScanURL]
+# Superc8 [![NPM version][NPMIMGURL]][NPMURL] [![Build Status][BuildStatusIMGURL]][BuildStatusURL] [![Coverage Status][CoverageIMGURL]][CoverageURL] [![DeepScan][DeepScanIMGURL]][DeepScanURL]
 
 [NPMURL]: https://npmjs.org/package/superc8 "npm"
 [NPMIMGURL]: https://img.shields.io/npm/v/superc8.svg?style=flat&longCache=true
