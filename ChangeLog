@@ -1,3 +1,8 @@
+2026.03.01, v12.2.2
+
+fix:
+- 5fb2759 package: rm files
+
 2026.03.01, v12.2.1
 
 feature:
