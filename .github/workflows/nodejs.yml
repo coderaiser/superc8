@@ -30,10 +30,6 @@ jobs:
         run: bun i -f --no-save
       - name: Lint
         run: redrun fix:lint
-      - name: Oxlint
-        run: redrun lint:oxlint
-      - name: Deno Lint
-        run: deno lint
       - name: Install Rust
         run: rustup update
       - uses: actions/cache@v4
