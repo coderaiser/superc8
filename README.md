@@ -1,8 +1,6 @@
-# superc8 - native V8 code-coverage
+# Superc8
 
-[![ci](https://github.com/bcoe/c8/actions/workflows/ci.yaml/badge.svg)](https://github.com/bcoe/c8/actions/workflows/ci.yaml)
-![nycrc config on GitHub](https://img.shields.io/nycrc/bcoe/c8)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://www.conventionalcommits.org/)
+![image](https://github.com/user-attachments/assets/1486a474-5922-4d2f-b3b1-8cc3707b0ec9)
 
 ## Fork of `c8` contains
 
@@ -17,7 +15,7 @@
 Code-coverage using [Node.js' built in functionality](https://nodejs.org/dist/latest-v10.x/docs/api/cli.html#cli_node_v8_coverage_dir)
 that's compatible with [Istanbul's reporters](https://istanbul.js.org/docs/advanced/alternative-reporters/).
 
-Like [nyc](https://github.com/istanbuljs/nyc), c8 just magically works:
+Like [nyc](https://github.com/istanbuljs/nyc), `superc8` just magically works:
 
 ```sh
 npm i superc8 -g
