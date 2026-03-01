@@ -1,4 +1,14 @@
-# Superc8
+# SuperC8 [![NPM version][NPMIMGURL]][NPMURL] [![Build Status][BuildStatusIMGURL]][BuildStatusURL] [![Coverage Status][CoverageIMGURL]][CoverageURL] [![DeepScan][DeepScanIMGURL]][DeepScanURL]
+
+[NPMURL]: https://npmjs.org/package/superc8 "npm"
+[NPMIMGURL]: https://img.shields.io/npm/v/superc8.svg?style=flat&longCache=true
+[BuildStatusURL]: https://github.com/coderaiser/superc8/actions?query=workflow%3A%22Node+CI%22 "Build Status"
+[BuildStatusIMGURL]: https://github.com/coderaiser/superc8/workflows/Node%20CI/badge.svg
+[CoverageURL]: https://coveralls.io/github/coderaiser/superc8?branch=master
+[CoverageIMGURL]: https://coveralls.io/repos/coderaiser/superc8/badge.svg?branch=master&service=github
+[DeepScanURL]: https://deepscan.io/dashboard#view=project&tid=16903&pid=20211&bid=545558
+[DeepScanIMGURL]: https://deepscan.io/api/teams/16903/projects/20211/branches/545558/badge/grade.svg
+
 
 ![image](https://github.com/user-attachments/assets/1486a474-5922-4d2f-b3b1-8cc3707b0ec9)
 
@@ -7,7 +17,7 @@
 - ✅ Fixed TODO ([`parase-args#L176`](https://github.com/bcoe/c8/blob/main/lib/parse-args.js#L176), [`check-coverage#L14`](https://github.com/bcoe/c8/blob/ee2f1cfc5584d41bb2d51b788d0953dab0c798f8/lib/commands/check-coverage.js#L14));
 - ✅ ESM-only code;
 - ✅ Updated dependencies, including `yargs` that makes `node v25` crash (https://github.com/bcoe/c8/issues/582);
-- ✅ Applied 🐊[**Putout**](https://github.com/coderaiser/putout) default suggestions;
+- ✅ Applied 🐊[**Putout**](https://github.com/coderaiser/superc8) default suggestions;
 - ✅ Up coverage to 100%;
 - ✅ Disabled flacky tests;
 - ✅ Applied private imports;
