@@ -883,8 +883,9 @@ for (const mergeAsync of [false, true]) {
             it('check import monocart', () => {
                 const {output, status} = spawnSync(nodePath, ['./test/fixtures/import-mcr.js']);
                 status.should.equal(1);
+                
                 output
-                    .toString('utf8')
+                    .toString()
                     .should
                     .matchSnapshot();
             });
