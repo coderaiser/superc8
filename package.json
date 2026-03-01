@@ -76,11 +76,5 @@
   },
   "engines": {
     "node": ">=22"
-  },
-  "files": [
-    "index.js",
-    "index.d.ts",
-    "lib",
-    "bin"
-  ]
+  }
 }
