@@ -1,6 +1,6 @@
 {
   "name": "superc8",
-  "version": "12.1.3",
+  "version": "12.2.0",
   "type": "module",
   "description": "Output coverage reports using Node.js' built in coverage",
   "main": "./index.js",
