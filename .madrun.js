@@ -15,5 +15,5 @@ export default {
     'coverage': () => [env, `./bin/c8.js --check-coverage mocha --timeout=10000 ./test/*.js 'lib/**/*.spec.js'`],
     'test:snap': () => [fixtureEnv, 'npm test'],
     'fixture': async () => [fixtureEnv, await cutEnv('test:snap')],
-    'report': () => 'c8 report --reporter=lcov',
+    'report': () => './bin/c8.js report --reporter=lcov',
 };
