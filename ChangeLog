@@ -1,3 +1,8 @@
+2026.03.10, v12.3.1
+
+feature:
+- 546a6c2 superc8: keep the same exit code
+
 2026.03.09, v12.3.0
 
 feature:
