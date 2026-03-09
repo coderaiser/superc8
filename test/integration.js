@@ -46,6 +46,24 @@ for (const mergeAsync of [false, true]) {
                 .matchSnapshot();
         });
         
+        it('do not reports coverage for script that errored', () => {
+            const {output} = spawnSync(nodePath, [
+                c8Path,
+                '--exclude="test/*.js"',
+                '--temp-directory=tmp/normal',
+                '--clean=false',
+                `--merge-async=${mergeAsync}`,
+                nodePath,
+                resolveToFilePath('./fixtures/error'),
+            ]);
+            
+            output
+                .toString('utf8')
+                .should
+                .not
+                .match(/-/);
+        });
+        
         it('supports externally set NODE_V8_COVERAGE', () => {
             const {output} = spawnSync(nodePath, [
                 c8Path,

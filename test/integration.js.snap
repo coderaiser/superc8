@@ -380,6 +380,31 @@ Node.js v24.14.0
 "
 `;
 
+exports[`c8 do not reports coverage for script that errored 1`] = `
+",----------|---------|----------|---------|---------|-------------------
+File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------|---------|----------|---------|---------|-------------------
+All files |     100 |      100 |     100 |     100 |                   
+ error.js |     100 |      100 |     100 |     100 |                   
+----------|---------|----------|---------|---------|-------------------
+,/Users/coderaiser/superc8/test/fixtures/error.js:1
+throw Error();
+^
+
+Error
+    at Object.<anonymous> (/Users/coderaiser/superc8/test/fixtures/error.js:1:7)
+    at Module._compile (node:internal/modules/cjs/loader:1812:14)
+    at Object..js (node:internal/modules/cjs/loader:1943:10)
+    at Module.load (node:internal/modules/cjs/loader:1533:32)
+    at Module._load (node:internal/modules/cjs/loader:1335:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47
+
+Node.js v24.14.0
+"
+`;
+
 exports[`c8 mergeAsync /* c8 ignore next */ does not incorrectly mark previous branch as uncovered (see #254) 1`] = `
 ",--------------|---------|----------|---------|---------|-------------------
 File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
@@ -758,6 +783,31 @@ Node.js v24.14.0
 "
 `;
 
+exports[`c8 mergeAsync do not reports coverage for script that errored 1`] = `
+",----------|---------|----------|---------|---------|-------------------
+File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------|---------|----------|---------|---------|-------------------
+All files |     100 |      100 |     100 |     100 |                   
+ error.js |     100 |      100 |     100 |     100 |                   
+----------|---------|----------|---------|---------|-------------------
+,/Users/coderaiser/superc8/test/fixtures/error.js:1
+throw Error();
+^
+
+Error
+    at Object.<anonymous> (/Users/coderaiser/superc8/test/fixtures/error.js:1:7)
+    at Module._compile (node:internal/modules/cjs/loader:1812:14)
+    at Object..js (node:internal/modules/cjs/loader:1943:10)
+    at Module.load (node:internal/modules/cjs/loader:1533:32)
+    at Module._load (node:internal/modules/cjs/loader:1335:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47
+
+Node.js v24.14.0
+"
+`;
+
 exports[`c8 mergeAsync merges reports from subprocesses together 1`] = `
 ",first
 
@@ -909,8 +959,9 @@ hey
 -----------|---------|----------|---------|---------|-------------------
 File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------|---------|----------|---------|---------|-------------------
-All files  |   83.33 |    85.71 |      60 |   83.33 |                   
+All files  |   83.78 |     87.5 |      60 |   83.78 |                   
  async.js  |     100 |      100 |     100 |     100 |                   
+ error.js  |     100 |      100 |     100 |     100 |                   
  normal.js |      75 |    66.66 |   33.33 |      75 | 14-16,18-20       
 -----------|---------|----------|---------|---------|-------------------
 ,"

@@ -2,7 +2,7 @@
 
 import {rm, mkdir} from 'node:fs/promises';
 import process from 'node:process';
-import {foregroundChild} from 'foreground-child';
+import {execa} from 'execa';
 import {tryToCatch} from 'try-to-catch';
 import {outputReport} from '#commands/report';
 import {
@@ -14,44 +14,48 @@ import {
 const instrumenterArgs = hideInstrumenteeArgs();
 let argv = buildYargs().parse(instrumenterArgs);
 
-const [error] = await tryToCatch(run);
+process.exitCode = await run();
 
-/* c8 ignore start */
-if (error) {
-    console.error(error.stack);
-    process.exitCode = 1;
-}
-
-/* c8 ignore end */
 async function run() {
     const is = [
         'check-coverage',
         'report',
     ].includes(argv._[0]);
-    
+
     if (is) {
         argv = buildYargs(true).parse(process.argv.slice(2));
         return;
     }
-    
+
     if (argv.clean)
         await rm(argv.tempDirectory, {
             recursive: true,
             force: true,
         });
-    
+
     await mkdir(argv.tempDirectory, {
         recursive: true,
     });
+
     process.env.NODE_V8_COVERAGE = argv.tempDirectory;
-    foregroundChild(hideInstrumenterArgs(argv), async () => {
-        const [error] = await tryToCatch(outputReport, argv);
-        
-        if (error) {
-            console.error(error.stack);
-            return 1;
-        }
-        
-        return process.exitCode;
+
+    const [cmd, ...args] = hideInstrumenterArgs(argv);
+
+    const [cmdError] = await tryToCatch(execa, cmd, args, {
+        stdout: 'inherit',
+        stderr: 'inherit',
+        stdin: 'inherit',
     });
+
+    if (cmdError)
+        return 1;
+
+    const [error] = await tryToCatch(outputReport, argv);
+
+    if (error) {
+        console.error(error.stack);
+        return 1;
+    }
+
+    return process.exitCode;
 }
