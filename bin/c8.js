@@ -21,41 +21,41 @@ async function run() {
         'check-coverage',
         'report',
     ].includes(argv._[0]);
-    
+
     if (is) {
         argv = buildYargs(true).parse(process.argv.slice(2));
         return;
     }
-    
+
     if (argv.clean)
         await rm(argv.tempDirectory, {
             recursive: true,
             force: true,
         });
-    
+
     await mkdir(argv.tempDirectory, {
         recursive: true,
     });
-    
+
     process.env.NODE_V8_COVERAGE = argv.tempDirectory;
-    
+
     const [cmd, ...args] = hideInstrumenterArgs(argv);
-    
+
     const [cmdError] = await tryToCatch(execa, cmd, args, {
         stdout: 'inherit',
         stderr: 'inherit',
         stdin: 'inherit',
     });
-    
+
     if (cmdError)
-        return 1;
-    
+        return cmdError.exitCode;
+
     const [error] = await tryToCatch(outputReport, argv);
-    
+
     if (error) {
         console.error(error.stack);
         return 1;
     }
-    
+
     return process.exitCode;
 }

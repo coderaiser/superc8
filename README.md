@@ -21,6 +21,7 @@
 - ✅ Disabled flacky tests;
 - ✅ Applied private imports;
 - ✅ When tests failed do not report coverage;
+- ✅ Keep the same exit code as test run;
 - ✅ Used `execa` instead of `foreground-child`;
 
 Code-coverage using [Node.js' built in functionality](https://nodejs.org/dist/latest-v10.x/docs/api/cli.html#cli_node_v8_coverage_dir)

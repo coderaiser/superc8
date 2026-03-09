@@ -146,6 +146,19 @@ for (const mergeAsync of [false, true]) {
                 .match(/Cannot find module 'unknown'/u);
         });
         
+        it('exits with same code as failed script', () => {
+            const {status} = spawnSync(nodePath, [
+                '--exclude="test/*.js"',
+                '--temp-directory=tmp/normal',
+                '--clean=false',
+                `--merge-async=${mergeAsync}`,
+                nodePath,
+                resolveToFilePath('./fixtures/exit-code'),
+            ]);
+            
+            status.should.equal(9);
+        });
+        
         it('should allow for files outside of cwd', () => {
             // Here we nest this test into the report directory making the multidir
             // directories outside of cwd. If the `--allowExternal` flag is not provided
