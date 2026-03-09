@@ -6,8 +6,8 @@
 [BuildStatusIMGURL]: https://github.com/coderaiser/superc8/workflows/Node%20CI/badge.svg
 [CoverageURL]: https://coveralls.io/github/coderaiser/superc8?branch=master
 [CoverageIMGURL]: https://coveralls.io/repos/coderaiser/superc8/badge.svg?branch=master&service=github
-[DeepScanURL]: https://deepscan.io/dashboard#view=project&tid=16903&pid=20211&bid=545558
-[DeepScanIMGURL]: https://deepscan.io/api/teams/16903/projects/20211/branches/545558/badge/grade.svg
+[DeepScanURL]: https://deepscan.io/dashboard#view=project&tid=16903&pid=31181&bid=1010030
+[DeepScanIMGURL]: https://deepscan.io/api/teams/16903/projects/31181/branches/1010030/badge/grade.svg
 
 ![image](https://github.com/user-attachments/assets/1486a474-5922-4d2f-b3b1-8cc3707b0ec9)
 
