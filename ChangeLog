@@ -1,3 +1,8 @@
+2026.03.09, v12.3.0
+
+feature:
+- 65f3f72 superc8: foreground-child -> execa: when tests fails do not report coverage (#2)
+
 2026.03.01, v12.2.4
 
 fix:
