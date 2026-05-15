@@ -2,7 +2,7 @@
 
 import {rm, mkdir} from 'node:fs/promises';
 import process from 'node:process';
-import {execa} from 'execa';
+import {spawnSync} from 'node:child_process';
 import {tryToCatch} from 'try-to-catch';
 import {outputReport} from '#commands/report';
 import {
@@ -17,12 +17,9 @@ let argv = buildYargs().parse(instrumenterArgs);
 process.exitCode = await run();
 
 async function run() {
-    const is = [
-        'check-coverage',
-        'report',
-    ].includes(argv._[0]);
+    const isSpecial = ['check-coverage', 'report'].includes(argv._[0]);
     
-    if (is) {
+    if (isSpecial) {
         argv = buildYargs(true).parse(process.argv.slice(2));
         return;
     }
@@ -40,12 +37,13 @@ async function run() {
     process.env.NODE_V8_COVERAGE = argv.tempDirectory;
     
     const [cmd, ...args] = hideInstrumenterArgs(argv);
-    const [cmdError] = await tryToCatch(execa, cmd, args, {
+    
+    const result = spawnSync(cmd, args, {
         stdio: 'inherit',
     });
     
-    if (cmdError)
-        return cmdError.exitCode;
+    if (result.status)
+        return result.status ?? 1;
     
     const [error] = await tryToCatch(outputReport, argv);
     
