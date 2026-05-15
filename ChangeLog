@@ -1,3 +1,10 @@
+2026.05.15, v12.4.0
+
+feature:
+- b1fcfea superc8: -r, --responsive: add
+- 2acabfc superc8: supertape v13.0.0
+- e2f4b87 superc8: typescript v6.0.2
+
 2026.03.10, v12.3.1
 
 feature:
