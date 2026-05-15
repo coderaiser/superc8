@@ -1,3 +1,8 @@
+2026.05.15, v12.5.0
+
+feature:
+- 5b92777 superc8: execa -> child_process.spawn: The "eventTargets" argument must be an instance of EventEmitter or EventTarget. Received an instance of AbortSignal: when happydom used as loader
+
 2026.05.15, v12.4.0
 
 feature:
