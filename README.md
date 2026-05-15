@@ -63,6 +63,7 @@ Here is a list of common options. Run `c8 --help` for the full list and document
 | `--per-file` | check thresholds per file | `boolean` | `false` |
 | `--temp-directory` | directory V8 coverage data is written to and read from | `string` | `process.env.NODE_V8_COVERAGE` |
 | `--clean` | should temp files be deleted before script execution | `boolean` | `true` |
+| `-R`, `--responsive` | see [section below](#responsive-coverage-format) for more info | `boolean` | `false` |
 | `--experimental-monocart` | see [section below](#using-monocart-coverage-reports-experimental) for more info | `boolean` | `false` |
 
 ## Checking for "full" source coverage using `--all`
@@ -75,6 +76,32 @@ could show as `100%` for `a.js` when in fact both `main.js` and `b.js` are uncov
 By supplying `--all` to c8, all files in directories specified with `--src` (defaults to `cwd`) that pass the `--include`
 and `--exclude` flag checks, will be loaded into the report. If any of those files remain uncovered they will be factored
 into the report with a default of 0% coverage.
+
+## Responsive coverage format
+
+`superc8` supports responsive coverage output using the `--responsive` (or `-R`) flag, powered by [`@escover/formatter-responsive`](https://github.com/coderaiser/escover).
+
+This format adapts coverage output to your terminal width, providing a colorized table with:
+
+- **File names** grouped by folder;
+- **Line coverage percentage** (shown when terminal width >= 70 columns);
+- **Uncovered line numbers** highlighted in red;
+- **Color coding**: green for 100% coverage, red for files with uncovered lines.
+
+The table uses folders as section headers when files span multiple directories.
+
+Example usage:
+
+```sh
+c8 --responsive node foo.js
+```
+
+When combined with `--skip-full` and all files have 100% coverage:
+
+```sh
+c8 --responsive --skip-full node foo.js
+# 💪 coverage 100% Good Job!
+```
 
 ## SourceMap Support
 

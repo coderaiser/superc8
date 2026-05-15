@@ -194,4 +194,21 @@ describe('parse-args', () => {
             argv.mergeAsync.should.be.equal(true);
         });
     });
+    
+    describe('--responsive', () => {
+        it('should default to false', () => {
+            const argv = buildYargs().parse(['node', 'c8']);
+            argv.responsive.should.be.equal(false);
+        });
+        
+        it('should set to true when --responsive flag exists', () => {
+            const argv = buildYargs().parse(['node', 'c8', '--responsive']);
+            argv.responsive.should.be.equal(true);
+        });
+        
+        it('should set to true when -R flag exists', () => {
+            const argv = buildYargs().parse(['node', 'c8', '-R']);
+            argv.responsive.should.be.equal(true);
+        });
+    });
 });

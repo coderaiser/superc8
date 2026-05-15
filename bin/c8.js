@@ -40,11 +40,8 @@ async function run() {
     process.env.NODE_V8_COVERAGE = argv.tempDirectory;
     
     const [cmd, ...args] = hideInstrumenterArgs(argv);
-    
     const [cmdError] = await tryToCatch(execa, cmd, args, {
-        stdout: 'inherit',
-        stderr: 'inherit',
-        stdin: 'inherit',
+        stdio: 'inherit',
     });
     
     if (cmdError)

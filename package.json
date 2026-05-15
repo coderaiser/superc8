@@ -40,6 +40,8 @@
   "license": "ISC",
   "dependencies": {
     "@bcoe/v8-coverage": "^1.0.1",
+    "@escover/converter-istanbul": "^1.0.0",
+    "@escover/formatter-responsive": "^1.0.1",
     "@istanbuljs/schema": "^0.1.3",
     "execa": "^9.6.1",
     "find-up": "^8.0.0",

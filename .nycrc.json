@@ -1,0 +1,14 @@
+{
+    "reporter": [
+        "html",
+        "text"
+    ],
+    "exclude": [
+        "**/*.spec.*",
+        "**/*.config.*",
+        "**/fixtures"
+    ],
+    "lines": 95,
+    "branches": "82",
+    "statements": "95"
+}
