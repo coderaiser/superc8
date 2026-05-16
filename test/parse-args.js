@@ -216,6 +216,7 @@ describe('parse-args', () => {
             
             process.env.SUPERC8_RESPONSIVE = '1';
             const argv = buildYargs().parse(['node', 'c8']);
+            
             argv.responsive.should.be.equal(true);
             process.env.SUPERC8_RESPONSIVE = SUPERC8_RESPONSIVE;
         });
@@ -225,6 +226,7 @@ describe('parse-args', () => {
             
             process.env.SUPERC8_RESPONSIVE = '0';
             const argv = buildYargs().parse(['node', 'c8']);
+            
             argv.responsive.should.be.equal(false);
             process.env.SUPERC8_RESPONSIVE = SUPERC8_RESPONSIVE;
         });
@@ -234,6 +236,7 @@ describe('parse-args', () => {
             
             process.env.SUPERC8_RESPONSIVE = '0';
             const argv = buildYargs().parse(['node', 'c8', '--responsive']);
+            
             argv.responsive.should.be.equal(true);
             process.env.SUPERC8_RESPONSIVE = SUPERC8_RESPONSIVE;
         });
@@ -243,6 +246,7 @@ describe('parse-args', () => {
             
             process.env.SUPERC8_RESPONSIVE = 'true';
             const argv = buildYargs().parse(['node', 'c8']);
+            
             argv.responsive.should.be.equal(true);
             process.env.SUPERC8_RESPONSIVE = SUPERC8_RESPONSIVE;
         });
@@ -252,6 +256,7 @@ describe('parse-args', () => {
             
             process.env.SUPERC8_RESPONSIVE = 'false';
             const argv = buildYargs().parse(['node', 'c8']);
+            
             argv.responsive.should.be.equal(false);
             process.env.SUPERC8_RESPONSIVE = SUPERC8_RESPONSIVE;
         });
