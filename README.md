@@ -63,7 +63,7 @@ Here is a list of common options. Run `c8 --help` for the full list and document
 | `--per-file` | check thresholds per file | `boolean` | `false` |
 | `--temp-directory` | directory V8 coverage data is written to and read from | `string` | `process.env.NODE_V8_COVERAGE` |
 | `--clean` | should temp files be deleted before script execution | `boolean` | `true` |
-| `-R`, `--responsive` | see [section below](#responsive-coverage-format) for more info | `boolean` | `false` (or `true` if `SUPERC8_RESPONSIVE=1`) |
+| `-R`, `--responsive` | see [section below](#responsive-coverage-format) for more info | `boolean` | `false` (or `true` if `SUPERC8_RESPONSIVE=1` or `SUPERC8_RESPONSIVE=true`) |
 | `--experimental-monocart` | see [section below](#using-monocart-coverage-reports-experimental) for more info | `boolean` | `false` |
 
 ## Checking for "full" source coverage using `--all`
@@ -79,7 +79,7 @@ into the report with a default of 0% coverage.
 
 ## Responsive coverage format
 
-`superc8` supports responsive coverage output using the `--responsive` (or `-R`) flag, or the `SUPERC8_RESPONSIVE` environment variable set to `1`, powered by [`@escover/formatter-responsive`](https://github.com/coderaiser/escover).
+`superc8` supports responsive coverage output using the `--responsive` (or `-R`) flag, or the `SUPERC8_RESPONSIVE` environment variable set to `1` or `true`, powered by [`@escover/formatter-responsive`](https://github.com/coderaiser/escover).
 
 This format adapts coverage output to your terminal width, providing a colorized table with:
 

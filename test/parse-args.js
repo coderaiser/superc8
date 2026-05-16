@@ -237,5 +237,23 @@ describe('parse-args', () => {
             argv.responsive.should.be.equal(true);
             process.env.SUPERC8_RESPONSIVE = SUPERC8_RESPONSIVE;
         });
+        
+        it('should default to true when SUPERC8_RESPONSIVE=true', () => {
+            const {SUPERC8_RESPONSIVE} = process.env;
+            
+            process.env.SUPERC8_RESPONSIVE = 'true';
+            const argv = buildYargs().parse(['node', 'c8']);
+            argv.responsive.should.be.equal(true);
+            process.env.SUPERC8_RESPONSIVE = SUPERC8_RESPONSIVE;
+        });
+        
+        it('should default to false when SUPERC8_RESPONSIVE=false', () => {
+            const {SUPERC8_RESPONSIVE} = process.env;
+            
+            process.env.SUPERC8_RESPONSIVE = 'false';
+            const argv = buildYargs().parse(['node', 'c8']);
+            argv.responsive.should.be.equal(false);
+            process.env.SUPERC8_RESPONSIVE = SUPERC8_RESPONSIVE;
+        });
     });
 });

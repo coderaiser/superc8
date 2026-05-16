@@ -3,6 +3,7 @@ import {run, cutEnv} from 'madrun';
 
 const env = {
     TS_NODE_SKIP_PROJECT: true,
+    SUPERC8_RESPONSIVE: true,
 };
 
 const fixtureEnv = {
