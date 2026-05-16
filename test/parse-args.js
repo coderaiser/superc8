@@ -210,5 +210,32 @@ describe('parse-args', () => {
             const argv = buildYargs().parse(['node', 'c8', '-R']);
             argv.responsive.should.be.equal(true);
         });
+        
+        it('should default to true when SUPERC8_RESPONSIVE=1', () => {
+            const {SUPERC8_RESPONSIVE} = process.env;
+            
+            process.env.SUPERC8_RESPONSIVE = '1';
+            const argv = buildYargs().parse(['node', 'c8']);
+            argv.responsive.should.be.equal(true);
+            process.env.SUPERC8_RESPONSIVE = SUPERC8_RESPONSIVE;
+        });
+        
+        it('should default to false when SUPERC8_RESPONSIVE=0', () => {
+            const {SUPERC8_RESPONSIVE} = process.env;
+            
+            process.env.SUPERC8_RESPONSIVE = '0';
+            const argv = buildYargs().parse(['node', 'c8']);
+            argv.responsive.should.be.equal(false);
+            process.env.SUPERC8_RESPONSIVE = SUPERC8_RESPONSIVE;
+        });
+        
+        it('should allow --responsive flag to override SUPERC8_RESPONSIVE=0', () => {
+            const {SUPERC8_RESPONSIVE} = process.env;
+            
+            process.env.SUPERC8_RESPONSIVE = '0';
+            const argv = buildYargs().parse(['node', 'c8', '--responsive']);
+            argv.responsive.should.be.equal(true);
+            process.env.SUPERC8_RESPONSIVE = SUPERC8_RESPONSIVE;
+        });
     });
 });
