@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`c8 /* c8 ignore next */ does not incorrectly mark previous branch as uncovered (see #254) 1`] = `
-",undefined
---------------|---------|----------|---------|---------|-------------------
+",--------------|---------|----------|---------|---------|-------------------
 File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------|---------|----------|---------|---------|-------------------
 All files     |     100 |      100 |     100 |     100 |                   
@@ -12,8 +11,7 @@ All files     |     100 |      100 |     100 |     100 |
 `;
 
 exports[`c8 /* c8 ignore next */ ignores lines with special comment 1`] = `
-",undefined
-covered
+",covered
 covered
 -------------------|---------|----------|---------|---------|-------------------
 File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
@@ -25,8 +23,7 @@ All files          |    90.9 |      100 |     100 |    90.9 |
 `;
 
 exports[`c8 /* c8 ignore start/stop */ ignores lines with special comment 1`] = `
-",undefined
-covered
+",covered
 covered
 -------------------------|---------|----------|---------|---------|-------------------
 File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
@@ -38,8 +35,7 @@ All files                |     100 |       75 |     100 |     100 |
 `;
 
 exports[`c8 --all reports coverage for unloaded js files as 0 for line, branch and function 1`] = `
-",undefined
-zero
+",zero
 positive
 negative
 --------------|---------|----------|---------|---------|-------------------
@@ -56,8 +52,7 @@ All files     |   64.28 |    66.66 |      50 |   64.28 |
 `;
 
 exports[`c8 --all reports coverage for unloaded transpiled ts files as 0 for line, branch and function 1`] = `
-",undefined
-zero
+",zero
 positive
 negative
 -----------------|---------|----------|---------|---------|-------------------
@@ -74,8 +69,7 @@ All files        |   64.28 |    57.14 |      50 |   64.28 |
 `;
 
 exports[`c8 --all reports coverage for unloaded ts files as 0 for line, branch and function when using ts-node 1`] = `
-",undefined
---------------|---------|----------|---------|---------|-------------------
+",--------------|---------|----------|---------|---------|-------------------
 File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------|---------|----------|---------|---------|-------------------
 All files     |       0 |        0 |       0 |       0 |                   
@@ -89,8 +83,7 @@ All files     |       0 |        0 |       0 |       0 |
 `;
 
 exports[`c8 --all should allow for --all to be used in conjunction with --check-coverage 1`] = `
-",undefined
-zero
+",zero
 positive
 negative
 --------------|---------|----------|---------|---------|-------------------
@@ -110,16 +103,14 @@ ERROR: Coverage for statements (64.28%) does not meet global threshold (95%)
 `;
 
 exports[`c8 --all should allow for --all to be used with the check-coverage command (2 invocations) 1`] = `
-",undefined
-,ERROR: Coverage for lines (64.28%) does not meet global threshold (90%)
+",,ERROR: Coverage for lines (64.28%) does not meet global threshold (90%)
 ERROR: Coverage for branches (66.66%) does not meet global threshold (82%)
 ERROR: Coverage for statements (64.28%) does not meet global threshold (95%)
 "
 `;
 
 exports[`c8 --exclude-after-remap applies exclude rules after source-maps are applied 1`] = `
-",undefined
-reachable
+",reachable
 a = true
 a = false
 -------------|---------|----------|---------|---------|-------------------
@@ -132,8 +123,7 @@ All files    |     100 |      100 |     100 |     100 |
 `;
 
 exports[`c8 --extension includes coverage when extensions specified 1`] = `
-",undefined
-hey
+",hey
 i am a line of code
 what
 hey
@@ -231,8 +221,7 @@ All files                              |    5.17 |    11.76 |    6.12 |    5.17 
 `;
 
 exports[`c8 ESM Modules collects coverage for ESM modules 1`] = `
-",undefined
-bar foo
+",bar foo
 ------------|---------|----------|---------|---------|-------------------
 File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------|---------|----------|---------|---------|-------------------
@@ -245,8 +234,7 @@ All files   |   83.33 |      100 |   66.66 |   83.33 |
 `;
 
 exports[`c8 check-coverage --100 1`] = `
-",undefined
-hey
+",hey
 i am a line of code
 what
 hey
@@ -269,8 +257,7 @@ ERROR: Coverage for statements (83.33%) does not meet global threshold (100%)
 `;
 
 exports[`c8 check-coverage allows --check-coverage when executing script 1`] = `
-",undefined
-hey
+",hey
 i am a line of code
 what
 hey
@@ -291,8 +278,7 @@ ERROR: Coverage for statements (83.33%) does not meet global threshold (95%)
 `;
 
 exports[`c8 check-coverage allows threshold to be applied on per-file basis 1`] = `
-",undefined
-,ERROR: Coverage for lines (100%) does not meet threshold (101%) for test/fixtures/async.js
+",,ERROR: Coverage for lines (100%) does not meet threshold (101%) for test/fixtures/async.js
 ERROR: Coverage for lines (75%) does not meet threshold (101%) for test/fixtures/normal.js
 ERROR: Coverage for branches (66.66%) does not meet threshold (82%) for test/fixtures/normal.js
 ERROR: Coverage for statements (75%) does not meet threshold (95%) for test/fixtures/normal.js
@@ -300,22 +286,17 @@ ERROR: Coverage for statements (75%) does not meet threshold (95%) for test/fixt
 `;
 
 exports[`c8 check-coverage check-coverage command with --100 1`] = `
-",undefined
-,ERROR: Coverage for lines (83.33%) does not meet global threshold (100%)
+",,ERROR: Coverage for lines (83.33%) does not meet global threshold (100%)
 ERROR: Coverage for functions (60%) does not meet global threshold (100%)
 ERROR: Coverage for branches (85.71%) does not meet global threshold (100%)
 ERROR: Coverage for statements (83.33%) does not meet global threshold (100%)
 "
 `;
 
-exports[`c8 check-coverage exits with 0 if coverage within threshold 1`] = `
-",undefined
-,"
-`;
+exports[`c8 check-coverage exits with 0 if coverage within threshold 1`] = `",,"`;
 
 exports[`c8 check-coverage exits with 1 if coverage is below threshold 1`] = `
-",undefined
-,ERROR: Coverage for lines (83.33%) does not meet global threshold (101%)
+",,ERROR: Coverage for lines (83.33%) does not meet global threshold (101%)
 ERROR: Coverage for statements (83.33%) does not meet global threshold (95%)
 "
 `;
@@ -425,8 +406,7 @@ Node.js v24.14.0
 `;
 
 exports[`c8 mergeAsync /* c8 ignore next */ does not incorrectly mark previous branch as uncovered (see #254) 1`] = `
-",undefined
---------------|---------|----------|---------|---------|-------------------
+",--------------|---------|----------|---------|---------|-------------------
 File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------|---------|----------|---------|---------|-------------------
 All files     |     100 |      100 |     100 |     100 |                   
@@ -436,8 +416,7 @@ All files     |     100 |      100 |     100 |     100 |
 `;
 
 exports[`c8 mergeAsync /* c8 ignore next */ ignores lines with special comment 1`] = `
-",undefined
-covered
+",covered
 covered
 -------------------|---------|----------|---------|---------|-------------------
 File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
@@ -449,8 +428,7 @@ All files          |    90.9 |      100 |     100 |    90.9 |
 `;
 
 exports[`c8 mergeAsync /* c8 ignore start/stop */ ignores lines with special comment 1`] = `
-",undefined
-covered
+",covered
 covered
 -------------------------|---------|----------|---------|---------|-------------------
 File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
@@ -462,8 +440,7 @@ All files                |     100 |       75 |     100 |     100 |
 `;
 
 exports[`c8 mergeAsync --all reports coverage for unloaded js files as 0 for line, branch and function 1`] = `
-",undefined
-zero
+",zero
 positive
 negative
 --------------|---------|----------|---------|---------|-------------------
@@ -480,8 +457,7 @@ All files     |   64.28 |    66.66 |      50 |   64.28 |
 `;
 
 exports[`c8 mergeAsync --all reports coverage for unloaded transpiled ts files as 0 for line, branch and function 1`] = `
-",undefined
-zero
+",zero
 positive
 negative
 -----------------|---------|----------|---------|---------|-------------------
@@ -498,8 +474,7 @@ All files        |   64.28 |    57.14 |      50 |   64.28 |
 `;
 
 exports[`c8 mergeAsync --all reports coverage for unloaded ts files as 0 for line, branch and function when using ts-node 1`] = `
-",undefined
---------------|---------|----------|---------|---------|-------------------
+",--------------|---------|----------|---------|---------|-------------------
 File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------|---------|----------|---------|---------|-------------------
 All files     |       0 |        0 |       0 |       0 |                   
@@ -513,8 +488,7 @@ All files     |       0 |        0 |       0 |       0 |
 `;
 
 exports[`c8 mergeAsync --all should allow for --all to be used in conjunction with --check-coverage 1`] = `
-",undefined
-zero
+",zero
 positive
 negative
 --------------|---------|----------|---------|---------|-------------------
@@ -534,16 +508,14 @@ ERROR: Coverage for statements (64.28%) does not meet global threshold (95%)
 `;
 
 exports[`c8 mergeAsync --all should allow for --all to be used with the check-coverage command (2 invocations) 1`] = `
-",undefined
-,ERROR: Coverage for lines (64.28%) does not meet global threshold (90%)
+",,ERROR: Coverage for lines (64.28%) does not meet global threshold (90%)
 ERROR: Coverage for branches (66.66%) does not meet global threshold (82%)
 ERROR: Coverage for statements (64.28%) does not meet global threshold (95%)
 "
 `;
 
 exports[`c8 mergeAsync --exclude-after-remap applies exclude rules after source-maps are applied 1`] = `
-",undefined
-reachable
+",reachable
 a = true
 a = false
 -------------|---------|----------|---------|---------|-------------------
@@ -556,8 +528,7 @@ All files    |     100 |      100 |     100 |     100 |
 `;
 
 exports[`c8 mergeAsync --extension includes coverage when extensions specified 1`] = `
-",undefined
-hey
+",hey
 i am a line of code
 what
 hey
@@ -655,8 +626,7 @@ All files                              |    5.17 |    11.76 |    6.12 |    5.17 
 `;
 
 exports[`c8 mergeAsync ESM Modules collects coverage for ESM modules 1`] = `
-",undefined
-bar foo
+",bar foo
 ------------|---------|----------|---------|---------|-------------------
 File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------|---------|----------|---------|---------|-------------------
@@ -669,8 +639,7 @@ All files   |   83.33 |      100 |   66.66 |   83.33 |
 `;
 
 exports[`c8 mergeAsync check-coverage --100 1`] = `
-",undefined
-hey
+",hey
 i am a line of code
 what
 hey
@@ -693,8 +662,7 @@ ERROR: Coverage for statements (83.33%) does not meet global threshold (100%)
 `;
 
 exports[`c8 mergeAsync check-coverage allows --check-coverage when executing script 1`] = `
-",undefined
-hey
+",hey
 i am a line of code
 what
 hey
@@ -715,8 +683,7 @@ ERROR: Coverage for statements (83.33%) does not meet global threshold (95%)
 `;
 
 exports[`c8 mergeAsync check-coverage allows threshold to be applied on per-file basis 1`] = `
-",undefined
-,ERROR: Coverage for lines (100%) does not meet threshold (101%) for test/fixtures/async.js
+",,ERROR: Coverage for lines (100%) does not meet threshold (101%) for test/fixtures/async.js
 ERROR: Coverage for lines (75%) does not meet threshold (101%) for test/fixtures/normal.js
 ERROR: Coverage for branches (66.66%) does not meet threshold (82%) for test/fixtures/normal.js
 ERROR: Coverage for statements (75%) does not meet threshold (95%) for test/fixtures/normal.js
@@ -724,22 +691,17 @@ ERROR: Coverage for statements (75%) does not meet threshold (95%) for test/fixt
 `;
 
 exports[`c8 mergeAsync check-coverage check-coverage command with --100 1`] = `
-",undefined
-,ERROR: Coverage for lines (83.33%) does not meet global threshold (100%)
+",,ERROR: Coverage for lines (83.33%) does not meet global threshold (100%)
 ERROR: Coverage for functions (60%) does not meet global threshold (100%)
 ERROR: Coverage for branches (85.71%) does not meet global threshold (100%)
 ERROR: Coverage for statements (83.33%) does not meet global threshold (100%)
 "
 `;
 
-exports[`c8 mergeAsync check-coverage exits with 0 if coverage within threshold 1`] = `
-",undefined
-,"
-`;
+exports[`c8 mergeAsync check-coverage exits with 0 if coverage within threshold 1`] = `",,"`;
 
 exports[`c8 mergeAsync check-coverage exits with 1 if coverage is below threshold 1`] = `
-",undefined
-,ERROR: Coverage for lines (83.33%) does not meet global threshold (101%)
+",,ERROR: Coverage for lines (83.33%) does not meet global threshold (101%)
 ERROR: Coverage for statements (83.33%) does not meet global threshold (95%)
 "
 `;
@@ -847,8 +809,7 @@ Node.js v24.14.0
 `;
 
 exports[`c8 mergeAsync merges reports from subprocesses together 1`] = `
-",undefined
-first
+",first
 
 second
 
@@ -862,86 +823,8 @@ All files          |     100 |      100 |     100 |     100 |
 ,"
 `;
 
-exports[`c8 mergeAsync monocart report check import monocart 1`] = `
-",,--experimental-monocart requires the plugin monocart-coverage-reports. Run: \\"npm i monocart-coverage-reports@2 --save-dev\\"
-"
-`;
-
-exports[`c8 mergeAsync monocart report check sourcemap 1`] = `
-",undefined
-reachable
-a = true
-a = false
-,"
-`;
-
-exports[`c8 mergeAsync monocart report monocart check all 1`] = `
-",undefined
-zero
-positive
-negative
-,"
-`;
-
-exports[`c8 mergeAsync monocart report monocart check all and 100 1`] = `
-",undefined
-zero
-positive
-negative
-,ERROR: Coverage for lines (0%) does not meet threshold (100%) for test/fixtures/all/vanilla/dir/unloaded.js
-ERROR: Coverage for functions (0%) does not meet threshold (100%) for test/fixtures/all/vanilla/dir/unloaded.js
-ERROR: Coverage for statements (0%) does not meet threshold (100%) for test/fixtures/all/vanilla/dir/unloaded.js
-ERROR: Coverage for lines (68.42%) does not meet threshold (100%) for test/fixtures/all/vanilla/loaded.js
-ERROR: Coverage for branches (75%) does not meet threshold (100%) for test/fixtures/all/vanilla/loaded.js
-ERROR: Coverage for statements (80%) does not meet threshold (100%) for test/fixtures/all/vanilla/loaded.js
-"
-`;
-
-exports[`c8 mergeAsync monocart report monocart check coverage 1`] = `
-",undefined
-hey
-i am a line of code
-what
-hey
-what
-hey
-what
-hey
-,ERROR: Coverage for branches (62.5%) does not meet global threshold (80%)
-"
-`;
-
-exports[`c8 mergeAsync monocart report monocart check coverage pre file 1`] = `
-",undefined
-hey
-i am a line of code
-what
-hey
-what
-hey
-what
-hey
-,ERROR: Coverage for lines (70.59%) does not meet threshold (80%) for test/fixtures/normal.js
-ERROR: Coverage for branches (62.5%) does not meet threshold (80%) for test/fixtures/normal.js
-"
-`;
-
-exports[`c8 mergeAsync monocart report monocart check normal 1`] = `
-",undefined
-hey
-i am a line of code
-what
-hey
-what
-hey
-what
-hey
-,"
-`;
-
 exports[`c8 mergeAsync report generates report from existing temporary files 1`] = `
-",undefined
------------|---------|----------|---------|---------|-------------------
+",-----------|---------|----------|---------|---------|-------------------
 File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------|---------|----------|---------|---------|-------------------
 All files  |   83.33 |    85.71 |      60 |   83.33 |                   
@@ -952,8 +835,7 @@ All files  |   83.33 |    85.71 |      60 |   83.33 |
 `;
 
 exports[`c8 mergeAsync report supports --check-coverage, when generating reports 1`] = `
-",undefined
------------|---------|----------|---------|---------|-------------------
+",-----------|---------|----------|---------|---------|-------------------
 File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------|---------|----------|---------|---------|-------------------
 All files  |   83.33 |    85.71 |      60 |   83.33 |                   
@@ -995,8 +877,7 @@ All files |       0 |        0 |       0 |       0 |
 `;
 
 exports[`c8 mergeAsync reports coverage for script that exits normally 1`] = `
-",undefined
-hey
+",hey
 i am a line of code
 what
 hey
@@ -1016,8 +897,7 @@ All files  |   83.78 |     87.5 |      60 |   83.78 |
 `;
 
 exports[`c8 mergeAsync should allow for files outside of cwd 1`] = `
-",undefined
-hi
+",hi
 -------------------|---------|----------|---------|---------|-------------------
 File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -------------------|---------|----------|---------|---------|-------------------
@@ -1031,8 +911,7 @@ All files          |     100 |      100 |     100 |     100 |
 `;
 
 exports[`c8 mergeAsync should allow for multiple overrides of src location for --all 1`] = `
-",undefined
-hihi
+",hihi
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
@@ -1051,8 +930,7 @@ All files                       |    3.33 |    16.66 |       0 |    3.33 |
 `;
 
 exports[`c8 mergeAsync source-maps TypeScript remaps branches 1`] = `
-",undefined
-reachable
+",reachable
 a = true
 a = false
 ------------------------|---------|----------|---------|---------|-------------------
@@ -1065,8 +943,7 @@ All files               |      84 |       50 |     100 |      84 |
 `;
 
 exports[`c8 mergeAsync source-maps TypeScript remaps classes 1`] = `
-",undefined
-covered
+",covered
 covered
 covered
 covered
@@ -1081,8 +958,7 @@ All files              |   81.81 |    85.71 |      60 |   81.81 |
 `;
 
 exports[`c8 mergeAsync source-maps UglifyJS remaps branches 1`] = `
-",undefined
-reachable
+",reachable
 a = true
 a = false
 -------------|---------|----------|---------|---------|-------------------
@@ -1095,8 +971,7 @@ All files    |      80 |       40 |     100 |      80 |
 `;
 
 exports[`c8 mergeAsync source-maps UglifyJS remaps classes 1`] = `
-",undefined
-covered
+",covered
 covered
 covered
 covered
@@ -1111,8 +986,7 @@ All files   |   85.18 |       80 |      60 |   85.18 |
 `;
 
 exports[`c8 mergeAsync source-maps does not attempt to load source map URLs that aren't 1`] = `
-",undefined
---------------------|---------|----------|---------|---------|-------------------
+",--------------------|---------|----------|---------|---------|-------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------|---------|----------|---------|---------|-------------------
 All files           |   71.42 |       50 |     100 |   71.42 |                   
@@ -1122,8 +996,7 @@ All files           |   71.42 |       50 |     100 |   71.42 |
 `;
 
 exports[`c8 mergeAsync source-maps nyc remaps branches 1`] = `
-",undefined
-reachable
+",reachable
 a = true
 a = false
 -------------|---------|----------|---------|---------|-------------------
@@ -1136,8 +1009,7 @@ All files    |      80 |       40 |     100 |      80 |
 `;
 
 exports[`c8 mergeAsync source-maps nyc remaps classes 1`] = `
-",undefined
-covered
+",covered
 covered
 covered
 covered
@@ -1152,8 +1024,7 @@ All files   |   77.77 |    83.33 |      60 |   77.77 |
 `;
 
 exports[`c8 mergeAsync source-maps rollup remaps branches 1`] = `
-",undefined
-reachable
+",reachable
 a = true
 a = false
 -------------|---------|----------|---------|---------|-------------------
@@ -1167,8 +1038,7 @@ All files    |     100 |      100 |     100 |     100 |
 `;
 
 exports[`c8 mergeAsync source-maps rollup remaps classes 1`] = `
-",undefined
-covered
+",covered
 covered
 covered
 covered
@@ -1184,8 +1054,7 @@ All files   |   78.57 |    83.33 |      60 |   78.57 |
 `;
 
 exports[`c8 mergeAsync source-maps ts-node reads source-map from cache, and applies to coverage 1`] = `
-",undefined
-----------|---------|----------|---------|---------|-------------------
+",----------|---------|----------|---------|---------|-------------------
 File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------|---------|----------|---------|---------|-------------------
 All files |       0 |        0 |       0 |       0 |                   
@@ -1194,8 +1063,7 @@ All files |       0 |        0 |       0 |       0 |
 `;
 
 exports[`c8 mergeAsync supports externally set NODE_V8_COVERAGE 1`] = `
-",undefined
-hey
+",hey
 i am a line of code
 what
 hey
@@ -1214,8 +1082,7 @@ All files  |   83.33 |    85.71 |      60 |   83.33 |
 `;
 
 exports[`c8 merges reports from subprocesses together 1`] = `
-",undefined
-first
+",first
 
 second
 
@@ -1229,86 +1096,8 @@ All files          |     100 |      100 |     100 |     100 |
 ,"
 `;
 
-exports[`c8 monocart report check import monocart 1`] = `
-",,--experimental-monocart requires the plugin monocart-coverage-reports. Run: \\"npm i monocart-coverage-reports@2 --save-dev\\"
-"
-`;
-
-exports[`c8 monocart report check sourcemap 1`] = `
-",undefined
-reachable
-a = true
-a = false
-,"
-`;
-
-exports[`c8 monocart report monocart check all 1`] = `
-",undefined
-zero
-positive
-negative
-,"
-`;
-
-exports[`c8 monocart report monocart check all and 100 1`] = `
-",undefined
-zero
-positive
-negative
-,ERROR: Coverage for lines (0%) does not meet threshold (100%) for test/fixtures/all/vanilla/dir/unloaded.js
-ERROR: Coverage for functions (0%) does not meet threshold (100%) for test/fixtures/all/vanilla/dir/unloaded.js
-ERROR: Coverage for statements (0%) does not meet threshold (100%) for test/fixtures/all/vanilla/dir/unloaded.js
-ERROR: Coverage for lines (68.42%) does not meet threshold (100%) for test/fixtures/all/vanilla/loaded.js
-ERROR: Coverage for branches (75%) does not meet threshold (100%) for test/fixtures/all/vanilla/loaded.js
-ERROR: Coverage for statements (80%) does not meet threshold (100%) for test/fixtures/all/vanilla/loaded.js
-"
-`;
-
-exports[`c8 monocart report monocart check coverage 1`] = `
-",undefined
-hey
-i am a line of code
-what
-hey
-what
-hey
-what
-hey
-,ERROR: Coverage for branches (62.5%) does not meet global threshold (80%)
-"
-`;
-
-exports[`c8 monocart report monocart check coverage pre file 1`] = `
-",undefined
-hey
-i am a line of code
-what
-hey
-what
-hey
-what
-hey
-,ERROR: Coverage for lines (70.59%) does not meet threshold (80%) for test/fixtures/normal.js
-ERROR: Coverage for branches (62.5%) does not meet threshold (80%) for test/fixtures/normal.js
-"
-`;
-
-exports[`c8 monocart report monocart check normal 1`] = `
-",undefined
-hey
-i am a line of code
-what
-hey
-what
-hey
-what
-hey
-,"
-`;
-
 exports[`c8 report generates report from existing temporary files 1`] = `
-",undefined
------------|---------|----------|---------|---------|-------------------
+",-----------|---------|----------|---------|---------|-------------------
 File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------|---------|----------|---------|---------|-------------------
 All files  |   83.33 |    85.71 |      60 |   83.33 |                   
@@ -1319,8 +1108,7 @@ All files  |   83.33 |    85.71 |      60 |   83.33 |
 `;
 
 exports[`c8 report supports --check-coverage, when generating reports 1`] = `
-",undefined
------------|---------|----------|---------|---------|-------------------
+",-----------|---------|----------|---------|---------|-------------------
 File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------|---------|----------|---------|---------|-------------------
 All files  |   83.33 |    85.71 |      60 |   83.33 |                   
@@ -1362,8 +1150,7 @@ All files |       0 |        0 |       0 |       0 |
 `;
 
 exports[`c8 reports coverage for script that exits normally 1`] = `
-",undefined
-hey
+",hey
 i am a line of code
 what
 hey
@@ -1382,8 +1169,7 @@ All files  |   83.33 |    85.71 |      60 |   83.33 |
 `;
 
 exports[`c8 should allow for files outside of cwd 1`] = `
-",undefined
-hi
+",hi
 -------------------|---------|----------|---------|---------|-------------------
 File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -------------------|---------|----------|---------|---------|-------------------
@@ -1397,8 +1183,7 @@ All files          |     100 |      100 |     100 |     100 |
 `;
 
 exports[`c8 should allow for multiple overrides of src location for --all 1`] = `
-",undefined
-hihi
+",hihi
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
@@ -1417,8 +1202,7 @@ All files                       |    3.33 |    16.66 |       0 |    3.33 |
 `;
 
 exports[`c8 source-maps TypeScript remaps branches 1`] = `
-",undefined
-reachable
+",reachable
 a = true
 a = false
 ------------------------|---------|----------|---------|---------|-------------------
@@ -1431,8 +1215,7 @@ All files               |      84 |       50 |     100 |      84 |
 `;
 
 exports[`c8 source-maps TypeScript remaps classes 1`] = `
-",undefined
-covered
+",covered
 covered
 covered
 covered
@@ -1447,8 +1230,7 @@ All files              |   81.81 |    85.71 |      60 |   81.81 |
 `;
 
 exports[`c8 source-maps UglifyJS remaps branches 1`] = `
-",undefined
-reachable
+",reachable
 a = true
 a = false
 -------------|---------|----------|---------|---------|-------------------
@@ -1461,8 +1243,7 @@ All files    |      80 |       40 |     100 |      80 |
 `;
 
 exports[`c8 source-maps UglifyJS remaps classes 1`] = `
-",undefined
-covered
+",covered
 covered
 covered
 covered
@@ -1477,8 +1258,7 @@ All files   |   85.18 |       80 |      60 |   85.18 |
 `;
 
 exports[`c8 source-maps does not attempt to load source map URLs that aren't 1`] = `
-",undefined
---------------------|---------|----------|---------|---------|-------------------
+",--------------------|---------|----------|---------|---------|-------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------|---------|----------|---------|---------|-------------------
 All files           |   71.42 |       50 |     100 |   71.42 |                   
@@ -1488,8 +1268,7 @@ All files           |   71.42 |       50 |     100 |   71.42 |
 `;
 
 exports[`c8 source-maps nyc remaps branches 1`] = `
-",undefined
-reachable
+",reachable
 a = true
 a = false
 -------------|---------|----------|---------|---------|-------------------
@@ -1502,8 +1281,7 @@ All files    |      80 |       40 |     100 |      80 |
 `;
 
 exports[`c8 source-maps nyc remaps classes 1`] = `
-",undefined
-covered
+",covered
 covered
 covered
 covered
@@ -1518,8 +1296,7 @@ All files   |   77.77 |    83.33 |      60 |   77.77 |
 `;
 
 exports[`c8 source-maps rollup remaps branches 1`] = `
-",undefined
-reachable
+",reachable
 a = true
 a = false
 -------------|---------|----------|---------|---------|-------------------
@@ -1533,8 +1310,7 @@ All files    |     100 |      100 |     100 |     100 |
 `;
 
 exports[`c8 source-maps rollup remaps classes 1`] = `
-",undefined
-covered
+",covered
 covered
 covered
 covered
@@ -1550,8 +1326,7 @@ All files   |   78.57 |    83.33 |      60 |   78.57 |
 `;
 
 exports[`c8 source-maps ts-node reads source-map from cache, and applies to coverage 1`] = `
-",undefined
-----------|---------|----------|---------|---------|-------------------
+",----------|---------|----------|---------|---------|-------------------
 File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------|---------|----------|---------|---------|-------------------
 All files |       0 |        0 |       0 |       0 |                   
@@ -1560,8 +1335,7 @@ All files |       0 |        0 |       0 |       0 |
 `;
 
 exports[`c8 supports externally set NODE_V8_COVERAGE 1`] = `
-",undefined
-hey
+",hey
 i am a line of code
 what
 hey
