@@ -65,7 +65,6 @@ Here is a list of common options. Run `c8 --help` for the full list and document
 | `--clean` | should temp files be deleted before script execution | `boolean` | `true` |
 | `-R`, `--responsive` | see [section below](#responsive-coverage-format) for more info | `boolean` | `false` (or `true` if `SUPERC8_RESPONSIVE=1` or `SUPERC8_RESPONSIVE=true`) |
 
-
 ## Checking for "full" source coverage using `--all`
 
 By default v8 will only give us coverage for files that were loaded by the engine. If there are source files in your
@@ -166,7 +165,6 @@ The `--100` flag can be set for the `check-coverage` as well:
 ```sh
 c8 check-coverage --100
 ```
-
 
 ## Ignoring Uncovered Lines, Functions, and Blocks
 
