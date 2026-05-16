@@ -18,39 +18,39 @@ process.exitCode = await run();
 
 async function run() {
     const isSpecial = ['check-coverage', 'report'].includes(argv._[0]);
-    
+
     if (isSpecial) {
         argv = buildYargs(true).parse(process.argv.slice(2));
         return;
     }
-    
+
     if (argv.clean)
         await rm(argv.tempDirectory, {
             recursive: true,
             force: true,
         });
-    
+
     await mkdir(argv.tempDirectory, {
         recursive: true,
     });
-    
+
     process.env.NODE_V8_COVERAGE = argv.tempDirectory;
-    
+
     const [cmd, ...args] = hideInstrumenterArgs(argv);
-    
+
     const result = spawnSync(cmd, args, {
         stdio: 'inherit',
     });
-    
+
     if (result.status)
-        return result.status ?? 1;
-    
+        return result.status;
+
     const [error] = await tryToCatch(outputReport, argv);
-    
+
     if (error) {
         console.error(error.stack);
         return 1;
     }
-    
+
     return process.exitCode;
 }

@@ -1,11 +1,6 @@
 import process from 'node:process';
 import {run, cutEnv} from 'madrun';
 
-const env = {
-    TS_NODE_SKIP_PROJECT: true,
-    SUPERC8_RESPONSIVE: true,
-};
-
 const fixtureEnv = {
     CHAI_JEST_SNAPSHOT_UPDATE_ALL: true,
 };
@@ -15,11 +10,16 @@ const testEnv = {};
 if (process.env.UPDATE)
     Object.assign(testEnv, fixtureEnv);
 
+const coverageEnv = {
+    TS_NODE_SKIP_PROJECT: true,
+    ...testEnv,
+};
+
 export default {
     'lint': () => 'putout .',
     'fix:lint': () => run('lint', '--fix'),
     'test': () => [testEnv, `./bin/c8.js mocha --timeout=10000 ./test/*.js 'lib/**/*.spec.js'`],
-    'coverage': () => [env, `./bin/c8.js --check-coverage mocha --timeout=10000 ./test/*.js 'lib/**/*.spec.js'`],
+    'coverage': () => [coverageEnv, `./bin/c8.js --check-coverage mocha --timeout=10000 ./test/*.js 'lib/**/*.spec.js'`],
     'test:snap': () => [fixtureEnv, 'npm test'],
     'fixture': async () => [fixtureEnv, await cutEnv('test:snap')],
     'report': () => './bin/c8.js report --reporter=lcov',
