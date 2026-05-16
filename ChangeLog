@@ -1,3 +1,9 @@
+2026.05.16, v12.6.0
+
+feature:
+- 3587e50 superc8: SUPERC8_RESPONSIVE: true
+- 190e57f superc8: SUPERC8_RESPONSIVE: add support
+
 2026.05.15, v12.5.0
 
 feature:
